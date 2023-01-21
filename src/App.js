@@ -6,13 +6,17 @@ import FavoritesPage from "./Pages/FavoritesPage/FavoritesPage";
 import ProfilPage from "./Pages/ProfilPage/ProfilPage";
 import SearchPage from "./Pages/SearchPage/SearchPage";
 import StartPage from "./Pages/Startpage/Startpage";
+import MainPage from './Pages/MainPage/MainPage';
+import WelcomePage from './Pages/WelcomePage/WelcomePage';
 
 function App() {
 	return (
 		<BrowserRouter>
 			<div className="App">
 				<Routes>
-					<Route path="/" element={<StartPage />} />
+					<Route path="/" element={<WelcomePage />}></Route>
+					<Route path="/start" element={<StartPage />} />
+					<Route path="/main" element={<MainPage />}></Route>
 					<Route path="/areas" element={<AreasPage />} />
 					<Route path="/search" element={<SearchPage />} />
 					<Route path="/details" element={<DetailsPage />} />
