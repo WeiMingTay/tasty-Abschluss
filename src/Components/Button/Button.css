@@ -1,0 +1,11 @@
+.button button {
+
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 0 10px 2px lightgray;
+    width: calc(100% - 4rem);
+    margin: 0 2rem;
+}
