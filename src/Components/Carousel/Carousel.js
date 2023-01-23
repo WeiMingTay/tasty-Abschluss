@@ -5,16 +5,33 @@ import { useState } from 'react';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import Button from '../Button/Button';
 
-const Carousel = ({ data, button, card }) => {
+const Carousel = ({
+    data,
+    button,
+    card,
+    type1,
+    type2,
+    selectedAreaHandler,
+}) => {
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const [currentButtonIndex, setCurrentButtonIndex] = useState(0);
+    const [currentMealsIndex, setCurrentMealsIndex] = useState(0);
 
+    // Hier wird ein neues Array erstellt, das aus zwei Elementen besteht,
+    // die im Karussell angezeigt werden
     const visibleCards = data?.slice(currentCardIndex, currentCardIndex + 2);
+    // Hier wird ein neues Array aus 3 Elemente erstellt (für areas buttons)
     const visibleButtons = data?.slice(
         currentButtonIndex,
         currentButtonIndex + 3
     );
-
+    // Hier wird ein neues Array aus 3 Elemente erstellt (für categories buttons)
+    const visibleMealsSorts = data?.slice(
+        currentMealsIndex,
+        currentMealsIndex + 3
+    );
+    // Erstellen der Funktionen, die für die Änderung der angezeigten Elemente
+    // im Karussell verantwortlich sind
     function handlePreviousClick() {
         setCurrentCardIndex(currentCardIndex - 2);
     }
@@ -31,8 +48,18 @@ const Carousel = ({ data, button, card }) => {
         setCurrentButtonIndex(currentButtonIndex + 3);
     }
 
+    function handlePreviousClick2() {
+        setCurrentMealsIndex(currentMealsIndex - 3);
+    }
+
+    function handleNextClick2() {
+        setCurrentMealsIndex(currentMealsIndex + 3);
+    }
+
     return (
         <>
+            {/* {Hier wird der Inhalt des Karussells bedingt
+             gerendert, entsprechend den Daten, die es erhält} */}
             {data && (
                 <div className="carousel-container">
                     {card && (
@@ -59,13 +86,16 @@ const Carousel = ({ data, button, card }) => {
                             </button>
                         </>
                     )}
-                    {button && (
+                    {button && type1 && (
                         <>
                             <div className="carousel-cards-container">
                                 {visibleButtons?.map((element, index) => (
                                     <Button
                                         key={index}
-                                        button={element.strArea}
+                                        button={element}
+                                        selectedAreaHandler={
+                                            selectedAreaHandler
+                                        }
                                     />
                                 ))}
                             </div>
@@ -86,6 +116,30 @@ const Carousel = ({ data, button, card }) => {
                             </button>
                         </>
                     )}
+                    {button && type2 && (
+                        <>
+                            <div className="carousel-cards-container">
+                                {visibleMealsSorts?.map((element, index) => (
+                                    <Button key={index} button={element} />
+                                ))}
+                            </div>
+
+                            <button
+                                className="previous-btn"
+                                onClick={handlePreviousClick2}
+                                disabled={currentMealsIndex === 0}
+                            >
+                                <GrFormPrevious />
+                            </button>
+                            <button
+                                className="next-btn"
+                                onClick={handleNextClick2}
+                                disabled={currentMealsIndex >= data.length - 3}
+                            >
+                                <GrFormNext />
+                            </button>
+                        </>
+                    )}
                 </div>
             )}
         </>
@@ -93,3 +147,4 @@ const Carousel = ({ data, button, card }) => {
 };
 
 export default Carousel;
+

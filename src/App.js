@@ -8,6 +8,7 @@ import SearchPage from "./Pages/SearchPage/SearchPage";
 import StartPage from "./Pages/Startpage/Startpage";
 import MainPage from './Pages/MainPage/MainPage';
 import WelcomePage from './Pages/WelcomePage/WelcomePage';
+import CategoryPage from "./Pages/CategoryPage/CategoryPage";
 
 function App() {
 	return (
@@ -17,7 +18,11 @@ function App() {
 					<Route path="/" element={<WelcomePage />}></Route>
 					<Route path="/start" element={<StartPage />} />
 					<Route path="/main" element={<MainPage />}></Route>
-					<Route path="/areas" element={<AreasPage />} />
+					<Route path="/area/:id" element={<AreasPage />}></Route>
+					<Route
+                        path="/category/:id"
+                        element={<CategoryPage />}
+                    ></Route>
 					<Route path="/search" element={<SearchPage />} />
 					<Route path="/details" element={<DetailsPage />} />
 					<Route path="/favoriten" element={<FavoritesPage />} />
