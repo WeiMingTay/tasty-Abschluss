@@ -1,58 +1,130 @@
-@import url('../../variables.css');
+@import url("../../variables.css");
 
 .start-page {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../../Assets/Img/Bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+	background-color: var(--active-color);
+
+	width: 100vw;
+	height: 100vh;
+	/*    background-image: url('../../Assets/Img/Bg.png'); */
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	position: relative;
+}
+/* BG Linien */
+.startCarouselLinie {
+	position: absolute;
+	z-index: 1;
+}
+.linie01 {
+	top: 0;
+	left: 10%;
+}
+
+.linie02 {
+	top: 0;
+	left: 0;
+}
+/* Bilder */
+.startCarouselBG {
+	height: 60%;
+	max-height: 300px;
+	aspect-ratio: 1 /1;
+	border-radius: 50%;
+	background-color: #7ec0c4;
+	position: relative;
+	top: 8rem;
+	z-index: 0;
+}
+.startCarousel {
+	position: absolute;
+	z-index: 2;
+	transition: all 250ms;
+}
+.startHotDog {
+	top: 1rem;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: 3;
+}
+.startSalat {
+	right: 1rem;
+	top: 50%;
+	transform: translatey(-50%);
+}
+.startChicken {
+	bottom: 1rem;
+	left: 50%;
+	transform: translate(-50%);
+}
+.startSushi {
+	left: 1rem;
+	top: 50%;
+	transform: translatey(-50%);
+}
+.startRadieschen {
+	right: 10rem;
+	top: 20%;
+}
+.startPoree {
+	right: -7rem;
+	bottom: 15%;
+	width: 200px;
+	height: 90px;
+}
+.startCarousel:hover {
+	rotate: 1deg;
+	scale: 0.9;
+	cursor: pointer;
 }
 
 .start-info {
-    width: 100%;
-    position: relative;
-    margin-top: 12rem;
-    padding-top: 5rem;
-    text-align: center;
-    border-radius: 2rem 2rem 0 0;
-    background-color: var(--primary-color);
+	width: 100%;
+	position: relative;
+	margin-top: 12rem;
+	padding: 1.5rem 1rem;
+	text-align: center;
+	border-radius: 2rem 2rem 0 0;
+	background-color: var(--primary-color);
+	z-index: 1;
 }
 
 .start-info h2 {
-    font-size: var(--font-size-bg);
-    color: var(--text-color);
+	font-size: var(--font-size-bg);
+	color: var(--text-color);
 }
 
 .start-info p {
-    font-size: var(--font-size-sm);
-    color: var(--inactive-color);
-    padding: 0.5rem;
-    line-height: 3rem;
+	font-size: var(--font-size-sm);
+	color: var(--inactive-color);
+	padding: 0.5rem;
+	line-height: 3rem;
 }
 
 .start-btn {
-    display: inline-block;
-    width: 80%;
-    margin-bottom: 4rem;
-    margin-top: 3rem;
-    padding-block: 1.5rem;
-    background-color: var(--text-color);
-    color: var(--primary-color);
-    font-size: var(--font-size-sm);
-    border: none;
-    border-radius: 1rem;
+	display: inline-block;
+	width: 80%;
+
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+	padding-block: 1.5rem;
+	background-color: var(--text-color);
+	color: var(--primary-color);
+	font-size: var(--font-size-sm);
+	border: none;
+	border-radius: 1rem;
+	cursor: pointer;
 }
 
 .indicator {
-    position: absolute;
-    width: 50%;
-    height: 1rem;
-    left: 25%;
-    bottom: 0;
-    background: #e0e0e0;
-    border-radius: 100px;
+	position: absolute;
+	width: 50%;
+	height: 1rem;
+	left: 25%;
+	bottom: 0;
+	background: #e0e0e0;
+	border-radius: 100px;
 }
