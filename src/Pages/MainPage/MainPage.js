@@ -50,7 +50,7 @@ const Main = () => {
                         <h2>Areas</h2>
                         <h3>See All</h3>
                     </div>
-                    <Carousel data={areas} button={true} />
+                    <Carousel data={areas} button={true} type1={true} />
                 </section>
                 <section className="areas-section">
                     <div className="title">
