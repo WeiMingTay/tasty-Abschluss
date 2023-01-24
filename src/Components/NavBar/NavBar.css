@@ -16,8 +16,11 @@ nav {
 nav svg {
 	margin: 0.5rem auto;
 }
-nav svg:hover {
+nav svg:is(:hover, :focus) {
 	fill: var(--active-color);
+}
+nav a:last-of-type svg:is(:hover, :focus) {
+	fill: red;
 }
 nav svg:hover path,
 nav svg:hover circle {

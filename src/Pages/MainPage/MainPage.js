@@ -6,6 +6,7 @@ import Carousel from '../../Components/Carousel/Carousel';
 import { useState, useEffect } from 'react';
 import { fetchAreas, fetchCategories } from '../../Services/Services';
 import './MainPage.css';
+import MealOfTheDay from '../../Components/MealOfTheDay/MealOfTheDay';
 
 const Main = () => {
     const [categories, setCategories] = useState();
@@ -39,12 +40,13 @@ const Main = () => {
 
     return (
         <div className="main-page">
-            <SearchBar />
+         {/*    <SearchBar /> */}
             <main>
                 <section className="main-meal">
-                    <h1>Meal of the Day</h1>
-                    <img src={mainMeal} alt="main-meal" />
-                </section>
+                    <h2>Meal of the Day</h2>
+                    <MealOfTheDay />
+{/*                     <img src={mainMeal} alt="main-meal" />
+ */}                </section>
                 <section className="areas-section">
                     <div className="title">
                         <h2>Areas</h2>

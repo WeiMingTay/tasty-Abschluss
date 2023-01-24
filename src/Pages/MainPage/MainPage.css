@@ -7,12 +7,12 @@
     margin: 0 auto;
 }
 
-.main-meal h1 {
+.main-meal h2 {
     padding-block: 1rem;
 }
 
 .title {
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,4 +20,5 @@
 
 .title h3 {
     color: var(--active-color);
+    cursor: pointer;
 }

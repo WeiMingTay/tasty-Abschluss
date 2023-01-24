@@ -8,7 +8,9 @@
 
 .carousel-cards-container {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    /* container "touch-scrollable" gemacht */
+    overflow-x: hidden;
 }
 
 .previous-btn,

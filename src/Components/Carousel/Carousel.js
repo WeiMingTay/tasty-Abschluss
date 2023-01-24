@@ -64,13 +64,18 @@ const Carousel = ({
                 <div className="carousel-container">
                     {card && (
                         <>
-                            <div className="carousel-cards-container">
-                                {visibleCards.map((card, index) => (
+                        <div className="carousel-cards-container">
+                                {data.map((card, index) => (
                                     <Card key={index} card={card} />
                                 ))}
                             </div>
+                            {/* <div className="carousel-cards-container">
+                                {visibleCards.map((card, index) => (
+                                    <Card key={index} card={card} />
+                                ))}
+                            </div> */}
 
-                            <button
+                            {/* <button
                                 className="previous-btn"
                                 onClick={handlePreviousClick}
                                 disabled={currentCardIndex === 0}
@@ -83,7 +88,7 @@ const Carousel = ({
                                 disabled={currentCardIndex >= data.length - 2}
                             >
                                 <GrFormNext />
-                            </button>
+                            </button> */}
                         </>
                     )}
                     {button && type1 && (
