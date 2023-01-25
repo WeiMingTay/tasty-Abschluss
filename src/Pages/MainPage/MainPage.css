@@ -9,7 +9,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
-h2 {
+main h2 {
 padding-block: .5rem;
 	font-size: 2rem;
 }

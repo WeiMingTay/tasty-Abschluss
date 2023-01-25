@@ -11,7 +11,7 @@ const Card = ({ card }) => {
 					<div>
 						<img src={card.strCategoryThumb} alt={card.strCategory} />
 					</div>
-					<h2>{card.strCategory}</h2>
+					<h4>{card.strCategory}</h4>
 				</div>
 			</Link>
 		</div>
