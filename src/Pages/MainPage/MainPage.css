@@ -9,8 +9,9 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
-.main-meal h2 {
-	padding-block: 1rem;
+h2 {
+padding-block: .5rem;
+	font-size: 2rem;
 }
 
 .title {
