@@ -19,3 +19,7 @@
     width: 100%;
     padding-top: 0.5rem;
 }
+
+.small-card-link {
+    all: unset;
+}

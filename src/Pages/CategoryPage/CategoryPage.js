@@ -52,7 +52,7 @@ const CategoryPage = () => {
                     <h1>Search</h1>
                 </div>
             </header>
-            <SearchBar />
+            <SearchBar setSearchResults={() => {}} />
             {selectedCategory && (
                 <section className="areas-section">
                     <div className="title">
