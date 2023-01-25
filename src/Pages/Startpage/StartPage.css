@@ -13,6 +13,7 @@
 	align-items: center;
 	justify-content: flex-end;
 	position: relative;
+	/* overflow: hidden; */
 }
 /* BG Linien */
 .startCarouselLinie {
@@ -20,13 +21,15 @@
 	z-index: 1;
 }
 .linie01 {
-	top: 0;
-	left: 10%;
+	top: -45%;
+	left: -20rem;
+	width: 100vw;
 }
 
 .linie02 {
-	top: 0;
-	left: 0;
+	top: 35%;
+	left: -25%;
+	width: 100vw;
 }
 /* Bilder */
 .startCarouselBG {
@@ -41,28 +44,34 @@
 }
 .startCarousel {
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	transition: all 250ms;
+	cursor: none;
+	/* border: 0.5px solid red; */
 }
 .startHotDog {
-	top: 1rem;
+	top: -1rem;
 	left: 50%;
 	transform: translate(-50%);
-	z-index: 3;
+
+	height: 75px;
 }
 .startSalat {
-	right: 1rem;
+	right: -1rem;
 	top: 50%;
 	transform: translatey(-50%);
+	height: 100px;
 }
 .startChicken {
 	bottom: 1rem;
 	left: 50%;
+	height: 70px;
 	transform: translate(-50%);
 }
 .startSushi {
-	left: 1rem;
+	left: -1rem;
 	top: 50%;
+	height: 75px;
 	transform: translatey(-50%);
 }
 .startRadieschen {
@@ -76,9 +85,7 @@
 	height: 90px;
 }
 .startCarousel:hover {
-	rotate: 1deg;
-	scale: 0.9;
-	cursor: pointer;
+	rotate: 2deg;
 }
 
 .start-info {

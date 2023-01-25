@@ -1,7 +1,8 @@
 @import url("../../variables.css");
 .mealOfDay {
-  width: 75vw;
-  max-width: 450px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 300px;
   aspect-ratio: 1.5/1;
   background-color: var(--active-color);
   position: relative;
