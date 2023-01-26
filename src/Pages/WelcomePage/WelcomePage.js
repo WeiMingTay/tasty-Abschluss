@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import screen from "../../Assets/Img/Screen.png";
 import logo from "../../Assets/Img/Logo.png";
 import "./WelcomePage.css";
@@ -13,10 +13,10 @@ const WelcomePage = () => {
 			if (location.pathname === "/") {
 				window.location.href = "/start";
 			}
-		}, 1500);
+		}, 1500999);
 	}, [location.pathname]);
 
-    /* Hier würde ich, wenn Zeit bleibt, noch eine "Ladeanimation" bauen... und dann die Timeoutzeit auf circa 2-3 Sek stellen */
+	/* Hier würde ich, wenn Zeit bleibt, noch eine "Ladeanimation" bauen... und dann die Timeoutzeit auf circa 2-3 Sek stellen */
 	return (
 		<div className="welcomePage">
 			{/* Linien */}
@@ -77,50 +77,52 @@ const WelcomePage = () => {
 
 			<div className="logo">
 				{/* <img src={logo} alt="logo" /> */}
-				<svg
-					width="27"
-					height="17"
-					viewBox="0 0 27 17"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M6.30005 15.1985C3.76876 14.7739 1.83997 12.5724 1.83997 9.92045C1.83997 6.96457 4.23618 4.56836 7.19206 4.56836C7.55934 4.56836 7.91797 4.60535 8.26444 4.67582"
-						stroke="white"
-						stroke-width="2"
-						stroke-linecap="round"
-					/>
-					<path
-						d="M20.7527 15.1985C23.284 14.7739 25.2128 12.5724 25.2128 9.92045C25.2128 6.96457 22.8166 4.56836 19.8607 4.56836C19.4934 4.56836 19.1348 4.60535 18.7883 4.67582"
-						stroke="white"
-						stroke-width="2"
-						stroke-linecap="round"
-					/>
-					<path
-						d="M8.25272 7.69012C8.14265 7.26246 8.08411 6.81411 8.08411 6.35209C8.08411 3.39621 10.4803 1 13.4362 1C16.3921 1 18.7883 3.39621 18.7883 6.35209C18.7883 6.81411 18.7298 7.26246 18.6197 7.69012"
-						stroke="white"
-						stroke-width="2"
-						stroke-linecap="round"
-					/>
-					<path
-						d="M13.4011 10.6719V13.4748"
-						stroke="white"
-						stroke-width="2"
-						stroke-linecap="round"
-					/>
-					<path
-						d="M8.44441 10.9072C8.22034 11.4077 8.63112 13.3158 9.1166 13.6286"
-						stroke="white"
-						stroke-width="2"
-						stroke-linecap="round"
-					/>
-					<path
-						d="M18.7255 10.9072C18.9496 11.4077 18.5388 13.3158 18.0533 13.6286"
-						stroke="white"
-						stroke-width="2"
-						stroke-linecap="round"
-					/>
-				</svg>
+				<Link to="/start">
+					<svg
+						width="27"
+						height="17"
+						viewBox="0 0 27 17"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M6.30005 15.1985C3.76876 14.7739 1.83997 12.5724 1.83997 9.92045C1.83997 6.96457 4.23618 4.56836 7.19206 4.56836C7.55934 4.56836 7.91797 4.60535 8.26444 4.67582"
+							stroke="white"
+							stroke-width="2"
+							stroke-linecap="round"
+						/>
+						<path
+							d="M20.7527 15.1985C23.284 14.7739 25.2128 12.5724 25.2128 9.92045C25.2128 6.96457 22.8166 4.56836 19.8607 4.56836C19.4934 4.56836 19.1348 4.60535 18.7883 4.67582"
+							stroke="white"
+							stroke-width="2"
+							stroke-linecap="round"
+						/>
+						<path
+							d="M8.25272 7.69012C8.14265 7.26246 8.08411 6.81411 8.08411 6.35209C8.08411 3.39621 10.4803 1 13.4362 1C16.3921 1 18.7883 3.39621 18.7883 6.35209C18.7883 6.81411 18.7298 7.26246 18.6197 7.69012"
+							stroke="white"
+							stroke-width="2"
+							stroke-linecap="round"
+						/>
+						<path
+							d="M13.4011 10.6719V13.4748"
+							stroke="white"
+							stroke-width="2"
+							stroke-linecap="round"
+						/>
+						<path
+							d="M8.44441 10.9072C8.22034 11.4077 8.63112 13.3158 9.1166 13.6286"
+							stroke="white"
+							stroke-width="2"
+							stroke-linecap="round"
+						/>
+						<path
+							d="M18.7255 10.9072C18.9496 11.4077 18.5388 13.3158 18.0533 13.6286"
+							stroke="white"
+							stroke-width="2"
+							stroke-linecap="round"
+						/>
+					</svg>
+				</Link>
 
 				<h1>Tasty</h1>
 			</div>

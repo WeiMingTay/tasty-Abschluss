@@ -1,7 +1,7 @@
 .carousel-container {
     position: relative;
     width: 100%;
-    padding-block: 2rem;
+    padding-block: .5rem;
     display: flex;
     flex-direction: column;
 }
@@ -9,6 +9,8 @@
 .carousel-cards-container {
     display: flex;
     justify-content: space-around;
+    /* container "touch-scrollable" gemacht */
+    /* overflow-x: hidden; */
 }
 
 .previous-btn,

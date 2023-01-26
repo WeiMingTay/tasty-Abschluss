@@ -30,19 +30,24 @@
 .welcomeLinie {
 	position: absolute;
 }
-.linie01 {
-	top: 0%;
-	left: 0%;
-	color: #3da0a7;
-	z-index: 1;
+/* BG Linien */
+
+.linie001 {
+	top: -5%;
+	left: -10rem;
+	width: 100%;
 }
-.linie02 {
+
+.linie002 {
 	top: 30%;
 	left: 0%;
+	width: 100%;
 }
-.linie03 {
-    bottom: 0;
+.linie003 {
+    bottom: -.5rem;
+
 }
 .linie004 {
-    top: 0;
+right: 0;
+	top: 0;
 }
