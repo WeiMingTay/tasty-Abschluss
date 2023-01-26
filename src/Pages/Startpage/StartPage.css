@@ -13,7 +13,7 @@
 	align-items: center;
 	justify-content: flex-end;
 	position: relative;
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 /* BG Linien */
 .startCarouselLinie {

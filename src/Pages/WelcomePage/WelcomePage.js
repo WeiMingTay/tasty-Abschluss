@@ -15,7 +15,7 @@ const WelcomePage = () => {
 			if (location.pathname === "/") {
 				window.location.href = "/start";
 			}
-		}, 1500999);
+		}, 1500);
 	}, [location.pathname]);
 
 	/* Hier würde ich, wenn Zeit bleibt, noch eine "Ladeanimation" bauen... und dann die Timeoutzeit auf circa 2-3 Sek stellen */
