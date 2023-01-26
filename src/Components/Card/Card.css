@@ -8,17 +8,31 @@
 } */
 
 .card {
-    height: 17rem;
-    width: 17rem;
-}
 
+    width: 17rem;
+    box-shadow: 0 0 10px 0px lightgray;
+aspect-ratio: 1 / 1.1;
+padding: 1rem;
+border-radius: 1rem;
+transition: all 250ms;
+}
+.card:hover {
+    box-shadow: 0 10px 10px 1px lightgray;
+}
+.card div {
+
+}
 .card img {
     width: 100%;
-    height: 80%;
+    transition: all 250ms ease-out;
+}
+.card:hover img {
+    scale: 1.1;
 }
 
-.card h2 {
+.card h4 {
     padding-left: 1rem;
+    font-size:1.5rem;
 }
 
 .card-link {
