@@ -9,6 +9,8 @@
 .carousel-cards-container {
     display: flex;
     justify-content: space-around;
+    gap: 1rem;
+    margin: 0 1rem;
     /* container "touch-scrollable" gemacht */
     /* overflow-x: hidden; */
 }
