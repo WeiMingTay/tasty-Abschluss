@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -5,8 +6,9 @@ import screen from "../../Assets/Img/Screen.png";
 import logo from "../../Assets/Img/Logo.png";
 import "./WelcomePage.css";
 
+
 const WelcomePage = () => {
-	const location = useLocation();
+    const location = useLocation();
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -124,11 +126,12 @@ const WelcomePage = () => {
 					</svg>
 				</Link>
 
-				<h1>Tasty</h1>
-			</div>
-			{/*       <img className="welcome-img" src={screen} alt="welcome-page" /> */}
-		</div>
-	);
+
+                <h1>Tasty</h1>
+            </div>
+            {/*       <img className="welcome-img" src={screen} alt="welcome-page" /> */}
+        </div>
+    );
 };
 
 export default WelcomePage;

@@ -1,36 +1,36 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import AreasPage from "./Pages/AreasPage/AreasPage";
-import DetailsPage from "./Pages/DetailsPage/DetailsPage";
-import FavoritesPage from "./Pages/FavoritesPage/FavoritesPage";
-import ProfilPage from "./Pages/ProfilPage/ProfilPage";
-import SearchPage from "./Pages/SearchPage/SearchPage";
-import StartPage from "./Pages/Startpage/Startpage";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import AreasPage from './Pages/AreasPage/AreasPage';
+import DetailsPage from './Pages/DetailsPage/DetailsPage';
+import FavoritesPage from './Pages/FavoritesPage/FavoritesPage';
+import ProfilPage from './Pages/ProfilPage/ProfilPage';
+import SearchPage from './Pages/SearchPage/SearchPage';
+import StartPage from './Pages/Startpage/Startpage';
 import MainPage from './Pages/MainPage/MainPage';
 import WelcomePage from './Pages/WelcomePage/WelcomePage';
-import CategoryPage from "./Pages/CategoryPage/CategoryPage";
+import CategoryPage from './Pages/CategoryPage/CategoryPage';
 
 function App() {
-	return (
-		<BrowserRouter>
-			<div className="App">
-				<Routes>
-					<Route path="/" element={<WelcomePage />}></Route>
-					<Route path="/start" element={<StartPage />} />
-					<Route path="/main" element={<MainPage />}></Route>
-					<Route path="/area/:id" element={<AreasPage />}></Route>
-					<Route
+    return (
+        <BrowserRouter>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<WelcomePage />}></Route>
+                    <Route path="/start" element={<StartPage />} />
+                    <Route path="/main" element={<MainPage />}></Route>
+                    <Route path="/area/:id" element={<AreasPage />}></Route>
+                    <Route
                         path="/category/:id"
                         element={<CategoryPage />}
                     ></Route>
-					<Route path="/search" element={<SearchPage />} />
-					<Route path="/details" element={<DetailsPage />} />
-					<Route path="/favoriten" element={<FavoritesPage />} />
-					<Route path="/profil" element={<ProfilPage />} />
-				</Routes>
-			</div>
-		</BrowserRouter>
-	);
+                    <Route path="/search" element={<SearchPage />} />
+                    <Route path="/details/:id" element={<DetailsPage />} />
+                    <Route path="/favoriten" element={<FavoritesPage />} />
+                    <Route path="/profil" element={<ProfilPage />} />
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
