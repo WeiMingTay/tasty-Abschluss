@@ -5,7 +5,8 @@ $foodCircle: 135px;
 
 	width: 100%;
 	min-width: 250px;
-	max-width: 300px;
+	max-width: 275px;
+	cursor: pointer;
 
 	aspect-ratio: 1.5/1;
 	background-color: var(--active-color);
@@ -83,4 +84,8 @@ $foodCircle: 135px;
 			left: 10rem;
 		}
 	}
+	
+}
+.mealOfDayLink {
+	text-decoration: none;
 }

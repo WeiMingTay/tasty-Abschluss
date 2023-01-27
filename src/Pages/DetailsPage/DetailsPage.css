@@ -1,55 +1,59 @@
 @import url("../../variables.css");
-* {
+/* Steht schon in der app.css */
+
+/* * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     font-family: var(--fontFamilyMontserrat);
-}
+} */
 
 /* --------------- INGREDIENTS SEITE --------------- */
 
 .MealBackground {
-    width: 100vw;
+	width: 100vw;
 }
 
 .MealSlider {
-    position: absolute;
-    top: 280px;
-    margin-top: -280px;
-    border-radius: 16px;
-    box-shadow: 0px -10px 40px rgba(101, 123, 154, 0.1);
-    background-color: var(--primary-color);
+	position: absolute;
+	top: 280px;
+	margin-top: -280px;
+	border-radius: 16px;
+	box-shadow: 0px -10px 40px rgba(101, 123, 154, 0.1);
+	background-color: var(--primary-color);
 	margin: 0 auto;
-    width: 100vw;
+	width: 100vw;
 }
 
 .ToggleButtons {
-    width: 326px;
-    height: 54px;
-    margin-left: 31px;
-    background: #E6EBF2;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 4px;
-}
+	width: 326px;
+	height: 54px;
+	/* mit auto kannst du die Buttons zentrieren, oder unten mit flex... musst das die margin entfernen */
+	margin-left: 31px;
+	background: #e6ebf2;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
 
+	padding: 4px;
+}
+/* Das Meiste der Button sind ja gleich... kannst du zusammenfassen */
 .ToggleButtons button:nth-of-type(1) {
-    width: 159px;
-    height: 46px;
-    font-size: 16px;
-    font-weight: 700;
-    background: #042628;
-    color: var(--primary-color);
-    border-radius: 16px;
-    border: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 35px;
-    gap: 10px;
+	width: 159px;
+	height: 46px;
+	font-size: 16px;
+	font-weight: 700;
+	background: #042628;
+	color: var(--primary-color);
+	border-radius: 16px;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 35px;
+	gap: 10px;
 }
 
 /* .ToggleButtons button:nth-of-type(1):hover {
@@ -58,77 +62,80 @@
 } */
 
 .ToggleButtons button:nth-of-type(2) {
-    width: 159px;
-    height: 46px;
-    font-size: 16px;
-    font-weight: 700;
-    background: #E6EBF2;
-    color: #042628;
-    border-radius: 16px;
-    border: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 35px;
-    gap: 10px;
+	width: 159px;
+	height: 46px;
+	font-size: 16px;
+	font-weight: 700;
+	background: #e6ebf2;
+	color: #042628;
+	border-radius: 16px;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 35px;
+	gap: 10px;
 }
 
 /* .ToggleButtons button:nth-of-type(2):hover{
     background: #042628;
     color: var(--primary-color);
 } */
-h2:nth-of-type(1) {
-    padding-top: 40px;
-    margin-left: 24px;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text-color);
 
+/* Vergib hier noch einen direkten Pfad. so reagiert JEDE h2 auf der gesamten Seite =) */
+h2:nth-of-type(1) {
+	/* padding-top: 40px;
+	margin-left: 24px; */
+	/* font-size: 24px; */
+	font-weight: 700;
+	color: var(--text-color);
 }
 
 .FoodType {
-    margin-top: 6px;
-    margin-left: 24px;
-    margin-bottom: 25px;
-    font-size: 16px;
-    color: #748189;
-    line-height: 23.3px;
+	margin-top: 6px;
+	margin-left: 24px;
+	margin-bottom: 25px;
+	font-size: 16px;
+	color: #748189;
+	line-height: 23.3px;
 }
 
 .FoodType h3 {
-    font-weight: 600;
+	font-weight: 600;
 }
 .FoodType h4 {
-    font-weight: 400;
+	font-weight: 400;
 }
 
-
 h2:nth-of-type(2) {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 130%;
-    margin-top: 24px;
-    margin-left: 24px;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 130%;
+	margin-top: 24px;
+	margin-left: 24px;
 }
 
 .Ingredients {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
-    gap: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 16px;
+	gap: 10px;
 }
 
 .Ingredients p {
-    width: 230px;
-    height: 52px;
-    font-size: 18px;
-    font-weight: 700;
-    box-shadow: 0px 2px 16px rgba(6, 51, 54, 0.1);
-    border-radius: 16px;
-    background: var(--primary-color);
-    color: var(--text-color);
+	/* width: max-content könnte dir hier helfen */
+	width: 230px;
+	/* Oder du spielst mit display: table... zwar nicht nach Vorlage, aber kann mit festen breiten funktionieren */
+	height: 52px;
+	font-size: 18px;
+	font-weight: 700;
+	box-shadow: 0px 2px 16px rgba(6, 51, 54, 0.1); /* rgba find ich gut ;)  */
+	border-radius: 16px;
+
+	background: var(--primary-color);
+	color: var(--text-color);
 }
 
 /* --------------- INSTRUCTIONS SEITE --------------- */

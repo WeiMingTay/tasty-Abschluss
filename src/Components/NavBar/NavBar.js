@@ -63,6 +63,35 @@ const NavBar = () => {
 			<Link to="/favoriten">
 				{/* <i class="lar la-heart"></i> */}
                 <svg
+                className="favorites-btn"
+                width="76"
+                height="49"
+                viewBox="0 0 76 49"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path 
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M29.3719 23.5983C28.2989 20.2483 29.5529 16.4193 33.0699 15.2863C34.9199 14.6893 36.9619 15.0413 38.4999 16.1983C39.9549 15.0733 42.0719 14.6933 43.9199 15.2863C47.4369 16.4193 48.6989 20.2483 47.6269 23.5983C45.9569 28.9083 38.4999 32.9983 38.4999 32.9983C38.4999 32.9983 31.0979 28.9703 29.3719 23.5983Z"
+                    stroke="#97A2B0"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+                <path className="pathWhite"
+                    d="M42.5 18.7002C43.57 19.0462 44.326 20.0012 44.417 21.1222"
+                    stroke="#97A2B0"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+               
+			</Link>
+			<Link to="/profil">
+				{/* <i class="las la-user"></i> */}
+                <svg
                 className="profile-btn"
                 width="76"
                 height="49"
@@ -85,34 +114,6 @@ const NavBar = () => {
                     d="M37.8479 24.0059C40.386 24.0059 42.4432 21.9478 42.4432 19.4097C42.4432 16.8716 40.386 14.8145 37.8479 14.8145C35.3098 14.8145 33.2517 16.8716 33.2517 19.4097C33.2432 21.9392 35.287 23.9973 37.8155 24.0059H37.8479Z"
                     stroke="#97A2B0"
                     strokeWidth="1.42857"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </svg>
-			</Link>
-			<Link to="/profil">
-				{/* <i class="las la-user"></i> */}
-                <svg
-                className="favorites-btn"
-                width="76"
-                height="49"
-                viewBox="0 0 76 49"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path 
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M29.3719 23.5983C28.2989 20.2483 29.5529 16.4193 33.0699 15.2863C34.9199 14.6893 36.9619 15.0413 38.4999 16.1983C39.9549 15.0733 42.0719 14.6933 43.9199 15.2863C47.4369 16.4193 48.6989 20.2483 47.6269 23.5983C45.9569 28.9083 38.4999 32.9983 38.4999 32.9983C38.4999 32.9983 31.0979 28.9703 29.3719 23.5983Z"
-                    stroke="#97A2B0"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-                <path className="pathWhite"
-                    d="M42.5 18.7002C43.57 19.0462 44.326 20.0012 44.417 21.1222"
-                    stroke="#97A2B0"
-                    strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                 />
