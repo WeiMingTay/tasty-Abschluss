@@ -2,7 +2,8 @@
 .mealOfDay {
   width: 100%;
   min-width: 250px;
-  max-width: 300px;
+  max-width: 275px;
+  cursor: pointer;
   aspect-ratio: 1.5/1;
   background-color: var(--active-color);
   position: relative;
@@ -75,4 +76,8 @@
 .mealOfDay svg:nth-of-type(5) {
   top: 6rem;
   left: 10rem;
+}
+
+.mealOfDayLink {
+  text-decoration: none;
 }/*# sourceMappingURL=Mealy2.css.map */

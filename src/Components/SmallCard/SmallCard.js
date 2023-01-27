@@ -1,18 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './SmallCard.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./SmallCard.css";
 
 const SmallCard = ({ meal }) => {
-    return (
-        <Link className="small-card-link">
-            <div className="small-card" key={meal.idMeal}>
-                <img src={meal.strMealThumb} alt={meal.strMeal} />
-                {/* hier wird der Titel nur aus 10 Buchstaben angezeigt,
+	let mealString = meal.strMeal;
+	let mealSubstring = meal.strMeal.substring(0, 10);
+
+	if (mealSubstring.length >= 10) {
+		mealString = mealSubstring + "...";
+	} else {
+		mealString = mealString;
+	}
+	return (
+		<Link className="small-card-link" to={`/details/${meal.idMeal}`}>
+			<div className="small-card" key={meal.idMeal}>
+				<div>
+					<img src={meal.strMealThumb} alt={meal.strMeal} />
+				</div>
+				{/* hier wird der Titel nur aus 10 Buchstaben angezeigt,
                  um ein overflow zu vermeiden  */}
-                <h2>{meal.strMeal.substring(0, 10) + '...'}</h2>
-            </div>
-        </Link>
-    );
+				<h2>{mealString}</h2>
+			</div>
+		</Link>
+	);
 };
 
 export default SmallCard;

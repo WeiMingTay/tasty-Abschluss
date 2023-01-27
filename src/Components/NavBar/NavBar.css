@@ -19,7 +19,7 @@ nav svg {
 nav svg:is(:hover, :focus) {
 	fill: var(--active-color);
 }
-nav a:last-of-type svg:is(:hover, :focus) {
+.favorites-btn:is(:hover, :focus) {
 	fill: red;
 }
 nav svg:hover path,
