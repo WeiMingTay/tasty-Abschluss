@@ -19,8 +19,8 @@ const WideCard = ({ meal }) => {
                 </div>
             </div>
             {/* Der Link führt zur DetailsPage gemäß der jeweiligen Gericht-ID */}
-            <Link className="details-arrow-link">
-                <BsFillArrowRightSquareFill className="details-arrow" />
+            <Link className="details-arrow-link" to={`/details/${meal.idMeal}`}>
+                 <BsFillArrowRightSquareFill className="details-arrow" />
             </Link>
         </div>
     );
