@@ -13,40 +13,27 @@
 	background-color: var(--primary-color);
 	margin: 0 auto;
 	width: 100vw;
+	padding: 2rem;
 }
 
-h2 {
-	font-weight: 700;
-	color: var(--text-color);
-	margin-top: 24px;
-	margin-left: 24px;}
-
-h2:nth-of-type(1) {
-	font-size: 24px;
-}
-
-h2:nth-of-type(2) {
-	font-size: 20px;
+.MealSlider h2:nth-of-type(2) {
 	line-height: 130%;
 }
 
 .FoodType {
-	margin-top: 6px;
-	margin-left: 24px;
-	margin-bottom: 25px;
-	font-size: 16px;
+	/* margin-top: 6px; */
+
+	/* margin-bottom: 25px; */
+	/* font-size: 16px; */
 	color: #748189;
 	line-height: 23.3px;
 }
 
-.FoodType h3 {
+.FoodType p:first-of-type {
 	font-weight: 600;
 }
 
-.FoodType h4 {
-	font-weight: 400;
-}
-
+/* Was macht das? */
 .ButtonsBox {
 	width: 100vw;
 	display: flex;
@@ -73,11 +60,11 @@ h2:nth-of-type(2) {
 	padding: 12px 35px;
 	gap: 10px;
 }
-.ToggleButtons button:nth-of-type(1){
+.ToggleButtons button:nth-of-type(1) {
 	background: #042628;
 	color: var(--primary-color);
 }
-.ToggleButtons button:nth-of-type(2){
+.ToggleButtons button:nth-of-type(2) {
 	background: #e6ebf2;
 	color: #042628;
 }
@@ -102,6 +89,10 @@ h2:nth-of-type(2) {
 
 .Ingredients p {
 	width: max-content;
+	display: flex;
+	justify-content: flex-start;
+	/* vertikal zentriert */
+	align-items: center;
 	height: 52px;
 	font-size: 18px;
 	font-weight: 700;
@@ -126,8 +117,6 @@ h2:nth-of-type(2) {
 	background: var(--primary-color);
 	font-size: 16px;
 	font-weight: 400;
-
-
 }
 
 .VideoButton {
@@ -140,3 +129,20 @@ h2:nth-of-type(2) {
 	background-color: var(--active-color);
 	word-wrap: break-word;
 }
+/* .favorite-btn {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	padding: .5rem;
+	aspect-ratio: 1/1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: .75rem;
+	border: none;
+	background-color: var(--active-color);
+	color: var(--primary-color);
+	font-size: 1.5rem;
+	font-weight: 600;
+	cursor: pointer;
+} */
