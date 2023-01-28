@@ -13,7 +13,7 @@ const FavoritesPage = () => {
         const favoritesList = [];
 
         for (let i = 0; i < localStorage.length; i++) {
-            let key = localStorage.key(0);
+            let key = localStorage.key(i);
             let retrievedObject = JSON.parse(localStorage.getItem(key));
             favoritesList.push(retrievedObject);
         }
@@ -42,4 +42,3 @@ const FavoritesPage = () => {
 };
 
 export default FavoritesPage;
-
