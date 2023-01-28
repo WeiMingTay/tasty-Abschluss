@@ -11,7 +11,7 @@ import Carousel from "../../Components/Carousel/Carousel";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { fetchAreas, fetchMealSorts } from "../../Services/Services";
 import { Link } from "react-router-dom";
-import WideCard from '../../Components/WideCard/WideCard';
+import WideCard from "../../Components/WideCard/WideCard";
 
 const CategoryPage = () => {
 	const [selectedCategory, setSelectedCategory] = useState();
@@ -35,7 +35,7 @@ const CategoryPage = () => {
 
 			const sorts = await fetchMealSorts();
 			setMealSort(sorts);
-			console.log(mealSort)
+			console.log(mealSort);
 		}
 		fetchData();
 		// eslint-disable-next-line
@@ -54,18 +54,19 @@ const CategoryPage = () => {
 					</Link>
 					{/* <h2>Search</h2> */}
 				</div>
+				<SearchBar setSearchResults={setSearchResults} />
 			</header>
-			<SearchBar setSearchResults={setSearchResults} />
-			 {searchResults && (
-                <section className="search-results">
-                    {/* Wenn der searchResults-Wert nicht null ist, werden die Karten 
+
+			{searchResults && (
+				<section className="search-results">
+					{/* Wenn der searchResults-Wert nicht null ist, werden die Karten 
             mit den Suchergebnissen gezeigt. */}
-                    {searchResults &&
-                        searchResults.map((meal) => (
-                            <WideCard key={meal.idMeal} meal={meal} />
-                        ))}
-                </section>
-            )}
+					{searchResults &&
+						searchResults.map((meal) => (
+							<WideCard key={meal.idMeal} meal={meal} />
+						))}
+				</section>
+			)}
 			{selectedCategory && !searchResults && (
 				<section className="areas-section">
 					<div className="title">
