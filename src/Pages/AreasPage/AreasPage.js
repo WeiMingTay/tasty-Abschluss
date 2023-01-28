@@ -45,7 +45,7 @@ const AreasPage = () => {
                     <Link className="back-arrow-link" to={'/main'}>
                         <HiArrowNarrowLeft className="back_arrow" />
                     </Link>
-                    <h1>Search</h1>
+                    {/* <h2>Search</h2> */}
                 </div>
             </header>
             <SearchBar setSearchResults={setSearchResults} />
@@ -61,8 +61,8 @@ const AreasPage = () => {
             )}
             {selectedArea && !searchResults &&( <section className="areas-section">
                 <div className="title">
-                    <h2>Categories</h2>
-                    <h3>See All</h3>
+                    <h3>Categories</h3>
+                    <p className='seeAll'>See All</p>
                 </div>
                 <Carousel data={mealSort} button={true} type2={true} />
             </section>)}

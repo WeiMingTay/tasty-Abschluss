@@ -1,65 +1,61 @@
-import Button from '../../Components/Button/Button';
-import NavBar from '../../Components/NavBar/NavBar';
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import './DetailsPage.css';
+import Button from "../../Components/Button/Button";
+import NavBar from "../../Components/NavBar/NavBar";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import "./DetailsPage.css";
 
 const DetailsPage = () => {
-    const [meal, setMeal] = useState();
-    const [measures, setMeasures] = useState([]);
-    const [ingredients, setIngredients] = useState([]);
+	const [meal, setMeal] = useState();
+	const [measures, setMeasures] = useState([]);
+	const [ingredients, setIngredients] = useState([]);
 
-    const params = useParams();
-    // Speichern der meal-id, die vom Params Objekt erhaltet wird, in einer Variablen
-    const mealId = params.id;
+	const params = useParams();
+	// Speichern der meal-id, die vom Params Objekt erhaltet wird, in einer Variablen
+	const mealId = params.id;
 
-    //Erstellen einer Funktion, die die keys speichert,
-    // die keine empty string oder Null werte in den oben genannten Arrays haben
-    const filterMealObject = (obj) => {
-        //Erstellen von zwei Arrays zum Speichern der measures  und ingredients keys,
-        // die von dem meal objekt erhalten werden
-        const measures = [];
-        const ingredients = [];
-        for (let key in obj) {
-            if (
-                key.startsWith('strIngredient') &&
-                obj[key] &&
-                obj[key] !== ' '
-            ) {
-                ingredients.push(obj[key]);
-            }
-            if (key.startsWith('strMeasure') && obj[key] && obj[key] !== ' ') {
-                measures.push(obj[key]);
-            }
-        }
-        setIngredients(ingredients);
-        setMeasures(measures);
-    };
+	//Erstellen einer Funktion, die die keys speichert,
+	// die keine empty string oder Null werte in den oben genannten Arrays haben
+	const filterMealObject = (obj) => {
+		//Erstellen von zwei Arrays zum Speichern der measures  und ingredients keys,
+		// die von dem meal objekt erhalten werden
+		const measures = [];
+		const ingredients = [];
+		for (let key in obj) {
+			if (key.startsWith("strIngredient") && obj[key] && obj[key] !== " ") {
+				ingredients.push(obj[key]);
+			}
+			if (key.startsWith("strMeasure") && obj[key] && obj[key] !== " ") {
+				measures.push(obj[key]);
+			}
+		}
+		setIngredients(ingredients);
+		setMeasures(measures);
+	};
 
-    const fetchMealById = () => {
-        //Erstellen einer Funktion, die die meal daten gemäß der mealId  abruft
-        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
-            .then((response) => response.json())
-            .then((data) => {
-                const selectedMeal = data.meals[0];
-                filterMealObject(selectedMeal);
-                setMeal(selectedMeal);
-                console.log(measures, ingredients);
-            });
-    };
+	const fetchMealById = () => {
+		//Erstellen einer Funktion, die die meal daten gemäß der mealId  abruft
+		fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+			.then((response) => response.json())
+			.then((data) => {
+				const selectedMeal = data.meals[0];
+				filterMealObject(selectedMeal);
+				setMeal(selectedMeal);
+				console.log(measures, ingredients);
+			});
+	};
 
-    // Erstellen einer Funktion,dass das meal im localStorage  Speichert ,
-    // um es später in der Favoritenliste anzuzeigen
-    const addToFavorites = () => {
-        //Speichern des  meal objekts im localStorage durch Setzen
-        //das key auf den meal-id Wert
-        localStorage.setItem(`${meal.idMeal}`, JSON.stringify(meal));
-    };
+	// Erstellen einer Funktion,dass das meal im localStorage  Speichert ,
+	// um es später in der Favoritenliste anzuzeigen
+	const addToFavorites = () => {
+		//Speichern des  meal objekts im localStorage durch Setzen
+		//das key auf den meal-id Wert
+		localStorage.setItem(`${meal.idMeal}`, JSON.stringify(meal));
+	};
 
-    useEffect(() => {
-        fetchMealById();
-    }, [params.id]);
+	useEffect(() => {
+		fetchMealById();
+	}, [params.id]);
 
 	// const instructionsString = meal.strInstructions;
 	// const instructionsWithLines = instructionsString.replaceAll('.', '.\n'); 

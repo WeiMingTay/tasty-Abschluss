@@ -10,9 +10,8 @@
 	justify-content: space-between;
 	overflow: hidden;
 }
-main h2 {
+main h3 {
 	padding-block: 0.5rem;
-	font-size: 1.5rem;
 }
 
 .title {
@@ -21,7 +20,9 @@ main h2 {
 	justify-content: space-between;
 }
 
-.title h3 {
+.title .seeAll {
+	font-size: 1.25rem;
+	font-weight: 600;
 	color: var(--active-color);
 	cursor: pointer;
 }
