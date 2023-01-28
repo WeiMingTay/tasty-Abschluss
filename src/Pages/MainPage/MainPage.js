@@ -8,12 +8,15 @@ import { fetchAreas, fetchCategories } from "../../Services/Services";
 import "./MainPage.css";
 import MealOfTheDay from "../../Components/MealOfTheDay/MealOfTheDay";
 import { useParams } from "react-router-dom";
+import WideCard from '../../Components/WideCard/WideCard';
+ 
 
 const Main = () => {
 	const [categories, setCategories] = useState();
 	const [areas, setAreas] = useState();
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
+	const [searchResults, setSearchResults] = useState(null);
 
 
 
@@ -45,12 +48,22 @@ const Main = () => {
 		<div className="main-page">
 			
 			<main>
-            <SearchBar setSearchResults={() => {}}/>
-				<section className="main-meal">
+            <SearchBar setSearchResults={setSearchResults}/>
+			{searchResults && (
+                <section className="search-results">
+                    {/* Wenn der searchResults-Wert nicht null ist, werden die Karten 
+            mit den Suchergebnissen gezeigt. */}
+                    {searchResults &&
+                        searchResults.map((meal) => (
+                            <WideCard key={meal.idMeal} meal={meal} />
+                        ))}
+                </section>
+            )}
+				 {!searchResults && <><section className="main-meal">
 					<h2>Meal of the Day</h2>
 					<MealOfTheDay />
 					{/*                     <img src={mainMeal} alt="main-meal" />
-					 */}{" "}
+					 */}
 				</section>
 				<section className="areas-section">
 					<div className="title">
@@ -65,7 +78,7 @@ const Main = () => {
 						<h3>See All</h3>
 					</div>
 					<Carousel data={categories} card={true} />
-				</section>
+				</section> </>}
 			</main>
 			<NavBar />
 		</div>
