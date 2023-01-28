@@ -3,6 +3,7 @@ import "./Card.css";
 // import { data } from '../../Services/DummyData';
 import { Link } from "react-router-dom";
 
+
 const Card = ({ card }) => {
 	return (
 		<div className="container">

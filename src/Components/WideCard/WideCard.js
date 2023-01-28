@@ -1,8 +1,9 @@
 import React from "react";
 import "./WideCard.css";
-import { BsFillArrowRightSquareFill } from "react-icons/bs";
+/* import { BsFillArrowRightSquareFill } from "react-icons/bs"; */
 import { Link } from "react-router-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Flag from "react-world-flags";
 
 const WideCard = ({ meal, button }) => {
 	const removeFromFavorite = (key) => {
@@ -36,7 +37,12 @@ const WideCard = ({ meal, button }) => {
 					<h4>{mealString}</h4>
 					<div className="category-name">
 						{/* <div className="blue-point"></div> */}
+{/* Hiermit könnte man evtl was machen, muss noch n weg finden, wie man die AREA zu einem country code macht =) */}
+{/* Zur not macht man ein array mit den informationen selbst */}
+						<Flag code="my" />
+
 						<span>{meal.strArea}</span>
+						
 					</div>
 				</div>
 				{/* Der Link führt zur DetailsPage gemäß der jeweiligen Gericht-ID */}
