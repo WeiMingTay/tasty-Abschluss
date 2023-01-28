@@ -5,49 +5,7 @@
 }
 
 .MealSlider {
-<<<<<<< HEAD
-    position: absolute;
-    top: 280px;
-    margin-top: -280px;
-    border-radius: 16px;
-    box-shadow: 0px -10px 40px rgba(101, 123, 154, 0.1);
-    background-color: var(--primary-color);
-    margin: 0 auto;
-    width: 100vw;
-}
 
-.instructionsPage {
-    display: none;
-}
-
-h2 {
-    font-weight: 700;
-    color: var(--text-color);
-    margin-top: 24px;
-    margin-left: 24px;
-}
-
-h2:nth-of-type(1) {
-    font-size: 24px;
-}
-
-h2:nth-of-type(2) {
-    font-size: 20px;
-    line-height: 130%;
-}
-
-.FoodType {
-    margin-top: 6px;
-    margin-left: 24px;
-    margin-bottom: 25px;
-    font-size: 16px;
-    color: #748189;
-    line-height: 23.3px;
-}
-
-.FoodType h3 {
-    font-weight: 600;
-=======
 	position: absolute;
 	top: 280px;
 	border-radius: 16px;
@@ -73,7 +31,7 @@ h2:nth-of-type(2) {
 
 .FoodType p:first-of-type {
 	font-weight: 600;
->>>>>>> 3b55794f79802538a06cf59e5b9e7553cf542b40
+
 }
 
 
@@ -118,24 +76,7 @@ h2:nth-of-type(2) {
 }
 
 .ToggleButtons button {
-<<<<<<< HEAD
-    width: 159px;
-    height: 46px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 16px;
-    border: none;
-    padding: 12px 35px;
-    gap: 10px;
-}
-.ToggleButtons button:nth-of-type(1) {
-    background: #042628;
-    color: var(--primary-color);
-}
-.ToggleButtons button:nth-of-type(2) {
-    background: #e6ebf2;
-    color: #042628;
-=======
+
 	width: 159px;
 	height: 46px;
 	font-size: 16px;
@@ -152,7 +93,7 @@ h2:nth-of-type(2) {
 .ToggleButtons button:nth-of-type(2) {
 	background: #e6ebf2;
 	color: #042628;
->>>>>>> 3b55794f79802538a06cf59e5b9e7553cf542b40
+
 }
 
 /* .ToggleButtons button:nth-of-type(1):hover {
@@ -174,16 +115,7 @@ h2:nth-of-type(2) {
 }
 
 .Ingredients p {
-<<<<<<< HEAD
-    width: max-content;
-    height: 52px;
-    font-size: 18px;
-    font-weight: 700;
-    box-shadow: 0px 2px 16px rgba(6, 51, 54, 0.1); /* rgba find ich gut ;)  */
-    border-radius: 16px;
-    background: var(--primary-color);
-    color: var(--text-color);
-=======
+
 	width: max-content;
 	display: flex;
 	justify-content: flex-start;
@@ -196,7 +128,7 @@ h2:nth-of-type(2) {
 	border-radius: 16px;
 	background: var(--primary-color);
 	color: var(--text-color);
->>>>>>> 3b55794f79802538a06cf59e5b9e7553cf542b40
+
 }
 
 /* --------------- INSTRUCTIONS SEITE --------------- */
@@ -206,39 +138,6 @@ h2:nth-of-type(2) {
 }
 
 .InstructionText {
-<<<<<<< HEAD
-    width: 287px;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
-    gap: 10px;
-    box-shadow: 0px 2px 16px rgba(6, 51, 54, 0.1);
-    border-radius: 16px;
-    background: var(--primary-color);
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.VideoButton {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 146px;
-    gap: 10px;
-    background-color: var(--active-color);
-    word-wrap: break-word;
-}
-
-.hidden {
-    display: none;
-}
-
-.Instructions {
-    margin-bottom: 6rem;
-=======
 	width: 80vw;
 	/* height: max-content; */
 	display: flex;
@@ -267,7 +166,6 @@ h2:nth-of-type(2) {
 	font-weight: 700;
 	color: var(--primary-color);
 	text-decoration: none;
->>>>>>> 3b55794f79802538a06cf59e5b9e7553cf542b40
 }
 /* .favorite-btn {
 	position: absolute;
