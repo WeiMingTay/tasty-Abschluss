@@ -4,12 +4,12 @@ import "./SmallCard.css";
 
 const SmallCard = ({ meal }) => {
 	let mealString;
-	let mealSubstring = meal.strMeal.substring(0, 10);
+	let mealSubstring = meal.strMeal.substring(0, 15);
 
-	if (mealSubstring.length >= 10) {
+	if (mealSubstring.length >= 15) {
 		mealString = mealSubstring + "...";
 	} else {
-		mealString = meal.strMeal
+		mealString = meal.strMeal;
 	}
 	return (
 		<Link className="small-card-link" to={`/details/${meal.idMeal}`}>
@@ -19,7 +19,9 @@ const SmallCard = ({ meal }) => {
 				</div>
 				{/* hier wird der Titel nur aus 10 Buchstaben angezeigt,
                  um ein overflow zu vermeiden  */}
-				<h2>{mealString}</h2>
+				<div>
+					<h4>{mealString}</h4>
+				</div>
 			</div>
 		</Link>
 	);

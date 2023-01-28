@@ -6,10 +6,12 @@
 .search-bar {
     position: relative;
     width: 100%;
-    margin: 0 auto;
+    margin: 2rem auto;
     align-items: center;
 }
-
+.search-bar label {
+    cursor:text;
+}
 .search-bar form input {
     width: 100%;
     border: 1px solid #cbd4de;

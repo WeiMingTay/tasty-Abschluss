@@ -1,7 +1,4 @@
-header {
-    display: flex;
-    padding: 1rem auto;
-}
+
 .header-container {
     display: flex;
     align-items: center;
@@ -14,7 +11,7 @@ header {
 
 .back_arrow {
     font-size: 3rem;
-    margin-right: 7rem;
+margin-right: 2rem;
 }
 .back_arrow:active {
     position: relative;

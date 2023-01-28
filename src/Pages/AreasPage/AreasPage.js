@@ -47,8 +47,9 @@ const AreasPage = () => {
                     </Link>
                     {/* <h2>Search</h2> */}
                 </div>
+                <SearchBar setSearchResults={setSearchResults} />
             </header>
-            <SearchBar setSearchResults={setSearchResults} />
+            
             {searchResults && (
                 <section className="search-results">
                     {/* Wenn der searchResults-Wert nicht null ist, werden die Karten 
