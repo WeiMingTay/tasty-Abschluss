@@ -1,12 +1,12 @@
 
 import React from "react";
-import { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+/* import { useEffect } from "react"; */
+import { Link, /* useLocation  */} from "react-router-dom";
 import "./WelcomePage.css";
 
 
 const WelcomePage = () => {
-    const location = useLocation();
+    /* const location = useLocation(); */
 
 /* 	useEffect(() => {
 		setTimeout(() => {
