@@ -1,8 +1,8 @@
-import Button from "../../Components/Button/Button";
+
 import NavBar from "../../Components/NavBar/NavBar";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
+
 import "./DetailsPage.css";
 
 const DetailsPage = () => {

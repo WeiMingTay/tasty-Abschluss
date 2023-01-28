@@ -2,8 +2,6 @@
 import React from "react";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import screen from "../../Assets/Img/Screen.png";
-import logo from "../../Assets/Img/Logo.png";
 import "./WelcomePage.css";
 
 
