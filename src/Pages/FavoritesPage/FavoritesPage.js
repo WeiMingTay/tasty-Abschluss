@@ -20,12 +20,13 @@ const FavoritesPage = () => {
 
         setList(favoritesList);
     };
-const wideCard = <WideCard />
+
     useEffect(() => {
         //Die Funktion wird ausgeführt,
         // nachdem die detailsPage-Komponente montiert wurde
         showFavoritesList();
-    }, [wideCard]);
+    }, [<WideCard />]);
+    
     return (
         <>
             <section className="favorite-page">
