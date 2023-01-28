@@ -12,11 +12,12 @@ const FavoritesPage = () => {
 		// aus dem localStorage darin zu verschieben
 		const favoritesList = [];
 
-		for (let i = 0; i < localStorage.length; i++) {
-			let key = localStorage.key(i);
-			let retrievedObject = JSON.parse(localStorage.getItem(key));
-			favoritesList.push(retrievedObject);
-		}
+
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            let retrievedObject = JSON.parse(localStorage.getItem(key));
+            favoritesList.push(retrievedObject);
+        }
 
 		setList(favoritesList);
 	};
