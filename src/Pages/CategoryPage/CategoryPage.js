@@ -35,6 +35,7 @@ const CategoryPage = () => {
 
 			const sorts = await fetchMealSorts();
 			setMealSort(sorts);
+			console.log(mealSort)
 		}
 		fetchData();
 		// eslint-disable-next-line
