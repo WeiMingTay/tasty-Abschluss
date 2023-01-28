@@ -9,6 +9,7 @@ import "./MainPage.css";
 import MealOfTheDay from "../../Components/MealOfTheDay/MealOfTheDay";
 
 import WideCard from '../../Components/WideCard/WideCard';
+import { Link } from "react-router-dom";
  
 
 const Main = () => {
@@ -79,6 +80,7 @@ const Main = () => {
 					</div>
 					<Carousel data={categories} card={true} />
 				</section> </>}
+				<Link className="toStart" to="/start">start</Link>
 			</main>
 			<NavBar />
 		</div>
