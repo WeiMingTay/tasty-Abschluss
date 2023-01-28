@@ -1,14 +1,32 @@
 
-import NavBar from "../../Components/NavBar/NavBar";
-import { useParams } from "react-router-dom";
-import { useState, useEffect, useCallback } from "react";
 
-import "./DetailsPage.css";
+import Button from '../../Components/Button/Button';
+import NavBar from '../../Components/NavBar/NavBar';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
+import './DetailsPage.css';
 
 const DetailsPage = () => {
-	const [meal, setMeal] = useState();
-	const [measures, setMeasures] = useState([]);
-	const [ingredients, setIngredients] = useState([]);
+    const [meal, setMeal] = useState();
+    const [measures, setMeasures] = useState([]);
+    const [ingredients, setIngredients] = useState([]);
+    const [showIngredients, setShowIngredients] = useState(true);
+    const ingredientsRef = useRef(null);
+    const instructionsRef = useRef(null);
+
+    function handleToggle() {
+        setShowIngredients(!showIngredients);
+        ingredientsRef.current.style.display = showIngredients
+            ? 'none'
+            : 'block';
+        instructionsRef.current.style.display = showIngredients
+            ? 'block'
+            : 'none';
+    }
+
+
+
 
 	const params = useParams();
 	// Speichern der meal-id, die vom Params Objekt erhaltet wird, in einer Variablen
@@ -85,13 +103,24 @@ const DetailsPage = () => {
                             <h4>{meal.strArea}</h4>
                         </section>
                         {/* Hier könntest evtl mit RadioButtons arbeiten... Lassen sich einfacher togglen. quasi: if (checked) dann anzeigen sonst hide/none.. */}
-                        <div className="ButtonsBox">
-							<section className="ToggleButtons">
-                            <button>Ingredients</button>
-                            <button>Instructions</button>
-							</section>
+                        <div className="ToggleButtons">
+                            <button
+                                className="ingredientsBtn"
+                                onClick={handleToggle}
+                            >
+                                Ingredients
+                            </button>
+                            <button
+                                className="instructionsBtn"
+                                onClick={handleToggle}
+                            >
+                                Instructions
+                            </button>
                         </div>
-                        <section className="ingredientsPage">
+                        <section
+                            className="ingredientsPage"
+                            ref={ingredientsRef}
+                        >
                             <h2>Ingredients</h2>
 
                             <section className="Ingredients">
@@ -108,7 +137,10 @@ const DetailsPage = () => {
                             </section>
                         </section>
 
-                        <section className="instructionsPage">
+                        <section
+                            className="instructionsPage"
+                            ref={instructionsRef}
+                        >
                             <h2>Instructions</h2>
                             <section className="Instructions">
                                 <article className='InstructionText'>{meal.strInstructions.replaceAll('.', '.\n')}</article>
