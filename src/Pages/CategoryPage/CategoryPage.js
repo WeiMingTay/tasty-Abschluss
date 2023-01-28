@@ -53,8 +53,9 @@ const CategoryPage = () => {
 						<HiArrowNarrowLeft className="back_arrow" />
 					</Link>
 					{/* <h2>Search</h2> */}
+					<SearchBar setSearchResults={setSearchResults} />
 				</div>
-				<SearchBar setSearchResults={setSearchResults} />
+				
 			</header>
 
 			{searchResults && (

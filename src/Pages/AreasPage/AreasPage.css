@@ -8,10 +8,6 @@
     all: unset;
 }
 
-.back_arrow {
-    font-size: 3rem;
-    margin-right: 7rem;
-}
 .back_arrow:active {
     position: relative;
     left: -0.2rem;
