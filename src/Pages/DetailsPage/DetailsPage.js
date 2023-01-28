@@ -61,6 +61,9 @@ const DetailsPage = () => {
         fetchMealById();
     }, [params.id]);
 
+	// const instructionsString = meal.strInstructions;
+	// const instructionsWithLines = instructionsString.replaceAll('.', '.\n'); 
+
     return (
         <>
             {meal && (
@@ -86,14 +89,15 @@ const DetailsPage = () => {
                             <h4>{meal.strArea}</h4>
                         </section>
                         {/* Hier könntest evtl mit RadioButtons arbeiten... Lassen sich einfacher togglen. quasi: if (checked) dann anzeigen sonst hide/none.. */}
-                        <div className="ToggleButtons">
+                        <div className="ButtonsBox">
+							<section className="ToggleButtons">
                             <button>Ingredients</button>
                             <button>Instructions</button>
+							</section>
                         </div>
                         <section className="ingredientsPage">
                             <h2>Ingredients</h2>
 
-                            {/* Vielleicht gibt es eine Möglichkeit das zu "Mappen".. Müssten nur herausfinden, wie man die individuelle Zahl jeder Zutat mitrechnet, bzw auslässt. Wenn das nicht geht, sollte eine einfach if abfrage aber funktionieren. quasi wie im obigen Kommentar */}
                             <section className="Ingredients">
                                 {meal && (
                                     <>
@@ -111,8 +115,8 @@ const DetailsPage = () => {
                         <section className="instructionsPage">
                             <h2>Instructions</h2>
                             <section className="Instructions">
-                                <a className='InstructionText'>{meal.strInstructions}</a>
-                                <button src={meal.strYoutube} className="VideoButton">Video</button>
+                                <article className='InstructionText'>{meal.strInstructions.replaceAll('.', '.\n')}</article>
+                                <a href={meal.strYoutube} target="_blank" className="VideoButton">Video</a>
                             </section>
                         </section>
                     </section>

@@ -7,7 +7,6 @@
 .MealSlider {
 	position: absolute;
 	top: 280px;
-	margin-top: -280px;
 	border-radius: 16px;
 	box-shadow: 0px -10px 40px rgba(101, 123, 154, 0.1);
 	background-color: var(--primary-color);
@@ -45,6 +44,23 @@ h2:nth-of-type(2) {
 
 .FoodType h4 {
 	font-weight: 400;
+}
+
+.favorite-btn {
+    font-weight: 700;
+    background: #042628;
+    color: var(--primary-color);
+    border-radius: 16px;
+    border: none;
+    padding: 10px 15px;
+	margin: 20px;
+}
+
+.heading-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .ButtonsBox {
@@ -113,30 +129,37 @@ h2:nth-of-type(2) {
 
 /* --------------- INSTRUCTIONS SEITE --------------- */
 
+.Instructions {
+	margin-bottom: 10rem;
+}
+
 .InstructionText {
-	width: 287px;
-	height: max-content;
+	width: 80vw;
+	/* height: max-content; */
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	padding: 16px;
-	gap: 10px;
+	margin: 24px 24px 18px 24px;
 	box-shadow: 0px 2px 16px rgba(6, 51, 54, 0.1);
 	border-radius: 16px;
 	background: var(--primary-color);
 	font-size: 16px;
 	font-weight: 400;
-
-
+	white-space: pre-line;
 }
 
 .VideoButton {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	display: inline-block;
+	width: 80vw;
+	height: 54px;
 	padding: 16px 146px;
-	gap: 10px;
+	margin: 18px 24px;
 	background-color: var(--active-color);
-	word-wrap: break-word;
+	border: none;
+	border-radius: 16px;
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--primary-color);
+	text-decoration: none;
 }
