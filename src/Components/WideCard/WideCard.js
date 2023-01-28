@@ -2,10 +2,20 @@ import React from 'react';
 import './WideCard.css';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
-const WideCard = ({ meal }) => {
+const WideCard = ({ meal, button }) => {
+    const removeFromFavorite = (key) => {
+        localStorage.removeItem(key);
+    };
     return (
         <div className="wide-card">
+            {button && (
+                <AiFillCloseCircle
+                    className="remove-btn"
+                    onClick={() => removeFromFavorite(meal.idMeal)}
+                />
+            )}
             <div className="image-container1">
                 <img src={meal.strMealThumb} />
             </div>
@@ -20,7 +30,7 @@ const WideCard = ({ meal }) => {
             </div>
             {/* Der Link führt zur DetailsPage gemäß der jeweiligen Gericht-ID */}
             <Link className="details-arrow-link" to={`/details/${meal.idMeal}`}>
-                 <BsFillArrowRightSquareFill className="details-arrow" />
+                <BsFillArrowRightSquareFill className="details-arrow" />
             </Link>
         </div>
     );

@@ -25,14 +25,14 @@ const FavoritesPage = () => {
         //Die Funktion wird ausgeführt,
         // nachdem die detailsPage-Komponente montiert wurde
         showFavoritesList();
-    }, []);
+    }, [<WideCard />]);
     return (
         <>
             <section className="favorite-page">
                 <h3>Favoriten</h3>
                 {list &&
                     list.map((meal, index) => (
-                        <WideCard key={index} meal={meal} />
+                        <WideCard key={index} meal={meal} button={true} />
                     ))}
                 {!list && <h2>No favorites to display </h2>}
             </section>

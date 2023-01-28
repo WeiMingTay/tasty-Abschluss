@@ -1,7 +1,7 @@
 import Button from '../../Components/Button/Button';
 import NavBar from '../../Components/NavBar/NavBar';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './DetailsPage.css';
 
@@ -9,6 +9,19 @@ const DetailsPage = () => {
     const [meal, setMeal] = useState();
     const [measures, setMeasures] = useState([]);
     const [ingredients, setIngredients] = useState([]);
+    const [showIngredients, setShowIngredients] = useState(true);
+    const ingredientsRef = useRef(null);
+    const instructionsRef = useRef(null);
+
+    function handleToggle() {
+        setShowIngredients(!showIngredients);
+        ingredientsRef.current.style.display = showIngredients
+            ? 'none'
+            : 'block';
+        instructionsRef.current.style.display = showIngredients
+            ? 'block'
+            : 'none';
+    }
 
     const params = useParams();
     // Speichern der meal-id, die vom Params Objekt erhaltet wird, in einer Variablen
@@ -87,10 +100,23 @@ const DetailsPage = () => {
                         </section>
                         {/* Hier könntest evtl mit RadioButtons arbeiten... Lassen sich einfacher togglen. quasi: if (checked) dann anzeigen sonst hide/none.. */}
                         <div className="ToggleButtons">
-                            <button>Ingredients</button>
-                            <button>Instructions</button>
+                            <button
+                                className="ingredientsBtn"
+                                onClick={handleToggle}
+                            >
+                                Ingredients
+                            </button>
+                            <button
+                                className="instructionsBtn"
+                                onClick={handleToggle}
+                            >
+                                Instructions
+                            </button>
                         </div>
-                        <section className="ingredientsPage">
+                        <section
+                            className="ingredientsPage"
+                            ref={ingredientsRef}
+                        >
                             <h2>Ingredients</h2>
 
                             {/* Vielleicht gibt es eine Möglichkeit das zu "Mappen".. Müssten nur herausfinden, wie man die individuelle Zahl jeder Zutat mitrechnet, bzw auslässt. Wenn das nicht geht, sollte eine einfach if abfrage aber funktionieren. quasi wie im obigen Kommentar */}
@@ -108,11 +134,21 @@ const DetailsPage = () => {
                             </section>
                         </section>
 
-                        <section className="instructionsPage">
+                        <section
+                            className="instructionsPage"
+                            ref={instructionsRef}
+                        >
                             <h2>Instructions</h2>
                             <section className="Instructions">
-                                <a className='InstructionText'>{meal.strInstructions}</a>
-                                <button src={meal.strYoutube} className="VideoButton">Video</button>
+                                <a className="InstructionText">
+                                    {meal.strInstructions}
+                                </a>
+                                <button
+                                    src={meal.strYoutube}
+                                    className="VideoButton"
+                                >
+                                    Video
+                                </button>
                             </section>
                         </section>
                     </section>
