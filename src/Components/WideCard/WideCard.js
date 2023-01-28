@@ -7,7 +7,7 @@ const WideCard = ({ meal }) => {
     return (
         <div className="wide-card">
             <div className="image-container1">
-                <img src={meal.strMealThumb} />
+                <img src={meal.strMealThumb} alt=""/>
             </div>
             <div className="meal-infos">
                 {/* hier wird der Titel nur aus 15 Buchstaben angezeigt,

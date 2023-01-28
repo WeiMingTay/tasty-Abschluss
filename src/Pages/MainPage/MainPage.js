@@ -1,13 +1,13 @@
 import React from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import SearchBar from "../../Components/SearchBar/SearchBar";
-import mainMeal from "../../Assets/Img/Card.png";
+
 import Carousel from "../../Components/Carousel/Carousel";
 import { useState, useEffect } from "react";
 import { fetchAreas, fetchCategories } from "../../Services/Services";
 import "./MainPage.css";
 import MealOfTheDay from "../../Components/MealOfTheDay/MealOfTheDay";
-import { useParams } from "react-router-dom";
+
 import WideCard from '../../Components/WideCard/WideCard';
  
 
