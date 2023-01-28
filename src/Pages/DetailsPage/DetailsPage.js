@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+
+
 import Button from '../../Components/Button/Button';
 import NavBar from '../../Components/NavBar/NavBar';
 import { useParams } from 'react-router-dom';
@@ -23,19 +24,9 @@ const DetailsPage = () => {
             ? 'block'
             : 'none';
     }
-=======
-import Button from "../../Components/Button/Button";
-import NavBar from "../../Components/NavBar/NavBar";
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import "./DetailsPage.css";
 
-const DetailsPage = () => {
-	const [meal, setMeal] = useState();
-	const [measures, setMeasures] = useState([]);
-	const [ingredients, setIngredients] = useState([]);
->>>>>>> 3b55794f79802538a06cf59e5b9e7553cf542b40
+
+
 
 	const params = useParams();
 	// Speichern der meal-id, die vom Params Objekt erhaltet wird, in einer Variablen
@@ -60,7 +51,7 @@ const DetailsPage = () => {
 		setMeasures(measures);
 	};
 
-	const fetchMealById = () => {
+	const fetchMealById = useCallback(() => {
 		//Erstellen einer Funktion, die die meal daten gemäß der mealId  abruft
 		fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
 			.then((response) => response.json())
@@ -70,7 +61,7 @@ const DetailsPage = () => {
 				setMeal(selectedMeal);
 				console.log(measures, ingredients);
 			});
-	};
+	}, [mealId, measures, ingredients]);
 
 	// Erstellen einer Funktion,dass das meal im localStorage  Speichert ,
 	// um es später in der Favoritenliste anzuzeigen
@@ -82,7 +73,7 @@ const DetailsPage = () => {
 
 	useEffect(() => {
 		fetchMealById();
-	}, [params.id]);
+	}, [params.id, fetchMealById]);
 
 	// const instructionsString = meal.strInstructions;
 	// const instructionsWithLines = instructionsString.replaceAll('.', '.\n'); 
@@ -153,7 +144,7 @@ const DetailsPage = () => {
                             <h2>Instructions</h2>
                             <section className="Instructions">
                                 <article className='InstructionText'>{meal.strInstructions.replaceAll('.', '.\n')}</article>
-                                <a href={meal.strYoutube} target="_blank" className="VideoButton">Video</a>
+                                <a href={meal.strYoutube} target="_blank" rel="noreferrer" className="VideoButton">Video</a>
                             </section>
                         </section>
                     </section>

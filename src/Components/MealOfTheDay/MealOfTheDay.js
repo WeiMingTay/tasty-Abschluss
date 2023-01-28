@@ -18,7 +18,7 @@ const MealOfTheDay = () => {
 			.then((data) => {
 				setRandomMeal(data.meals[0]);
 			});
-	}, []);
+	}, [url]);
 	console.log(randomMeal);
 
 	return (

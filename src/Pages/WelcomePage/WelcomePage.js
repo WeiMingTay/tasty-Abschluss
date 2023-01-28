@@ -1,20 +1,22 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import screen from '../../Assets/Img/Screen.png';
-import logo from '../../Assets/Img/Logo.png';
-import './WelcomePage.css';
+import React from "react";
+/* import { useEffect } from "react"; */
+import { Link, /* useLocation */ } from "react-router-dom";
+import "./WelcomePage.css";
+
+
 
 const WelcomePage = () => {
-    const location = useLocation();
+/*     const location = useLocation();
 
-    useEffect(() => {
-        setTimeout(async () => {
-            if (location.pathname === '/') {
-                window.location.href = '/start';
-            }
-        }, 1500);
-    }, []);
+useEffect(() => {
+		setTimeout( async() => {
+			if (location.pathname === "/") {
+				window.location.href = "/start";
+			}
+		}, 1500);
+
+	}, []); */
+
 
     /* Hier würde ich, wenn Zeit bleibt, noch eine "Ladeanimation" bauen... und dann die Timeoutzeit auf circa 2-3 Sek stellen */
     return (
