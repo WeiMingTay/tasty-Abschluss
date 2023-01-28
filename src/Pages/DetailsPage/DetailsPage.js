@@ -1,7 +1,7 @@
 
 import NavBar from "../../Components/NavBar/NavBar";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import "./DetailsPage.css";
 
@@ -33,7 +33,7 @@ const DetailsPage = () => {
 		setMeasures(measures);
 	};
 
-	const fetchMealById = () => {
+	const fetchMealById = useCallback(() => {
 		//Erstellen einer Funktion, die die meal daten gemäß der mealId  abruft
 		fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
 			.then((response) => response.json())
@@ -43,7 +43,7 @@ const DetailsPage = () => {
 				setMeal(selectedMeal);
 				console.log(measures, ingredients);
 			});
-	};
+	}, [mealId, measures, ingredients]);
 
 	// Erstellen einer Funktion,dass das meal im localStorage  Speichert ,
 	// um es später in der Favoritenliste anzuzeigen
