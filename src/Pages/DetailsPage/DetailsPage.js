@@ -57,66 +57,70 @@ const DetailsPage = () => {
 		fetchMealById();
 	}, [params.id]);
 
-	return (
-		<>
-			{meal && (
-				<section>
-					<img
-						src={meal.strMealThumb}
-						alt={meal.strMeal}
-						className="MealBackground"
-					/>
-					<section className="MealSlider">
-						<div className="heading-title">
-							<h2>{meal.strMeal}</h2>
-							<button className="favorite-btn" onClick={addToFavorites}>
-								{/* Add to favorites */}+
-							</button>
-						</div>
+	// const instructionsString = meal.strInstructions;
+	// const instructionsWithLines = instructionsString.replaceAll('.', '.\n'); 
 
-						<section className="FoodType">
-							<p>{meal.strCategory}</p>
-							<p>{meal.strArea}</p>
-						</section>
-						{/* Hier könntest evtl mit RadioButtons arbeiten... Lassen sich einfacher togglen. quasi: if (checked) dann anzeigen sonst hide/none.. */}
-						<div className="ToggleButtons">
-							<button>Ingredients</button>
-							<button>Instructions</button>
-						</div>
-						<section className="ingredientsPage">
-							<h3>Ingredients</h3>
+    return (
+        <>
+            {meal && (
+                <section>
+                    <img
+                        src={meal.strMealThumb}
+                        alt={meal.strMeal}
+                        className="MealBackground"
+                    />
+                    <section className="MealSlider">
+                        <div className="heading-title">
+                            <h2>{meal.strMeal}</h2>
+                            <button
+                                className="favorite-btn"
+                                onClick={addToFavorites}
+                            >
+                                Add to favorites
+                            </button>
+                        </div>
 
-							{/* Vielleicht gibt es eine Möglichkeit das zu "Mappen".. Müssten nur herausfinden, wie man die individuelle Zahl jeder Zutat mitrechnet, bzw auslässt. Wenn das nicht geht, sollte eine einfach if abfrage aber funktionieren. quasi wie im obigen Kommentar */}
-							<section className="Ingredients">
-								{meal && (
-									<>
-										{measures.map((measure, index) => (
-											<p>
-												{/* Mehrere Sachen probiert... Zeigt das Leerzeichen nicht an */}
-												<span>{measure} </span>
-												{ingredients[index]}
-											</p>
-										))}
-									</>
-								)}
+                        <section className="FoodType">
+                            <h3>{meal.strCategory}</h3>
+                            <h4>{meal.strArea}</h4>
+                        </section>
+                        {/* Hier könntest evtl mit RadioButtons arbeiten... Lassen sich einfacher togglen. quasi: if (checked) dann anzeigen sonst hide/none.. */}
+                        <div className="ButtonsBox">
+							<section className="ToggleButtons">
+                            <button>Ingredients</button>
+                            <button>Instructions</button>
 							</section>
-						</section>
+                        </div>
+                        <section className="ingredientsPage">
+                            <h2>Ingredients</h2>
 
-						<section className="instructionsPage">
-							<h3>Instructions</h3>
-							<section className="Instructions">
-								<a className="InstructionText">{meal.strInstructions}</a>
-								<button src={meal.strYoutube} className="VideoButton">
-									Video
-								</button>
-							</section>
-						</section>
-					</section>
-				</section>
-			)}
-			<NavBar />
-		</>
-	);
+                            <section className="Ingredients">
+                                {meal && (
+                                    <>
+                                        {measures.map((measure, index) => (
+                                            <p>
+                                                <span>{measure} </span>
+                                                {ingredients[index]}
+                                            </p>
+                                        ))}
+                                    </>
+                                )}
+                            </section>
+                        </section>
+
+                        <section className="instructionsPage">
+                            <h2>Instructions</h2>
+                            <section className="Instructions">
+                                <article className='InstructionText'>{meal.strInstructions.replaceAll('.', '.\n')}</article>
+                                <a href={meal.strYoutube} target="_blank" className="VideoButton">Video</a>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            )}
+            <NavBar />
+        </>
+    );
 };
 
 export default DetailsPage;
