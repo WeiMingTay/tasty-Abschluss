@@ -22,7 +22,7 @@ const WideCard = ({ meal, button }) => {
             <div className="meal-infos">
                 {/* hier wird der Titel nur aus 15 Buchstaben angezeigt,
                  um ein overflow zu vermeiden  */}
-                <h2>{meal.strMeal.substring(0, 15) + '...'}</h2>
+                <h4>{meal.strMeal.substring(0, 15) + '...'}</h4>
                 <div className="category-name">
                     <div className="blue-point"></div>
                     <span>{meal.strCategory}</span>

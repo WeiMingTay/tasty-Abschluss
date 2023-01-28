@@ -60,22 +60,22 @@ const Main = () => {
                 </section>
             )}
 				 {!searchResults && <><section className="main-meal">
-					<h2>Meal of the Day</h2>
+					<h3>Meal of the Day</h3>
 					<MealOfTheDay />
 					{/*                     <img src={mainMeal} alt="main-meal" />
 					 */}
 				</section>
 				<section className="areas-section">
 					<div className="title">
-						<h2>Areas</h2>
-						<h3>See All</h3>
+						<h3>Areas</h3>
+						<p className="seeAll">See All</p>
 					</div>
 					<Carousel data={areas} button={true} type1={true} />
 				</section>
 				<section className="areas-section">
 					<div className="title">
-						<h2>Categories</h2>
-						<h3>See All</h3>
+						<h3>Categories</h3>
+						<p className="seeAll">See All</p>
 					</div>
 					<Carousel data={categories} card={true} />
 				</section> </>}
