@@ -55,7 +55,7 @@ const DetailsPage = () => {
 
 	useEffect(() => {
 		fetchMealById();
-	}, [params.id]);
+	}, [params.id, fetchMealById]);
 
 	// const instructionsString = meal.strInstructions;
 	// const instructionsWithLines = instructionsString.replaceAll('.', '.\n'); 
@@ -112,7 +112,7 @@ const DetailsPage = () => {
                             <h2>Instructions</h2>
                             <section className="Instructions">
                                 <article className='InstructionText'>{meal.strInstructions.replaceAll('.', '.\n')}</article>
-                                <a href={meal.strYoutube} target="_blank" className="VideoButton">Video</a>
+                                <a href={meal.strYoutube} target="_blank" rel="noreferrer" className="VideoButton">Video</a>
                             </section>
                         </section>
                     </section>

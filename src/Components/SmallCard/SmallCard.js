@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import "./SmallCard.css";
 
 const SmallCard = ({ meal }) => {
-	let mealString = meal.strMeal;
+	let mealString;
 	let mealSubstring = meal.strMeal.substring(0, 10);
 
 	if (mealSubstring.length >= 10) {
 		mealString = mealSubstring + "...";
 	} else {
-		mealString = mealString;
+		mealString = meal.strMeal
 	}
 	return (
 		<Link className="small-card-link" to={`/details/${meal.idMeal}`}>
