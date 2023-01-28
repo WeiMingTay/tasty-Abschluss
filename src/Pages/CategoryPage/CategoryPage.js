@@ -11,11 +11,13 @@ import Carousel from "../../Components/Carousel/Carousel";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { fetchAreas, fetchMealSorts } from "../../Services/Services";
 import { Link } from "react-router-dom";
+import WideCard from '../../Components/WideCard/WideCard';
 
 const CategoryPage = () => {
 	const [selectedCategory, setSelectedCategory] = useState();
 	const [mealSort, setMealSort] = useState();
 	const [areas, setAreas] = useState();
+	const [searchResults, setSearchResults] = useState(null);
 
 	const params = useParams();
 
@@ -53,8 +55,18 @@ const CategoryPage = () => {
 					<h1>Search</h1>
 				</div>
 			</header>
-			<SearchBar setSearchResults={() => {}} />
-			{selectedCategory && (
+			<SearchBar setSearchResults={setSearchResults} />
+			 {searchResults && (
+                <section className="search-results">
+                    {/* Wenn der searchResults-Wert nicht null ist, werden die Karten 
+            mit den Suchergebnissen gezeigt. */}
+                    {searchResults &&
+                        searchResults.map((meal) => (
+                            <WideCard key={meal.idMeal} meal={meal} />
+                        ))}
+                </section>
+            )}
+			{selectedCategory && !searchResults && (
 				<section className="areas-section">
 					<div className="title">
 						<h2>Areas</h2>
@@ -64,7 +76,7 @@ const CategoryPage = () => {
 				</section>
 			)}
 
-			{selectedCategory && (
+			{selectedCategory && !searchResults && (
 				<section className="results-section">
 					{selectedCategory?.map((meal, index) => (
 						<SmallCard meal={meal} key={index} />
