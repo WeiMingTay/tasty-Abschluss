@@ -74,6 +74,7 @@
 	height: 75px;
 	transform: translatey(-50%);
 }
+/* Gemüse */
 .startRadieschen {
 	right: 10rem;
 	top: 20%;
@@ -83,6 +84,61 @@
 	bottom: 15%;
 	width: 200px;
 	height: 90px;
+}
+/* Punkte */
+.punktGross1 {
+	top: 22%;
+	left: 12%;
+}
+.punktGross2 {
+	top: 34%;
+	right: 23%;
+}
+.punktGross3 {
+	top: 45%;
+	right: 45%;
+}
+.punktGross4 {
+	bottom: 32%;
+	right: 49%;
+}
+.punktGross5 {
+	bottom: 22%;
+	left: 14%;
+}
+/* Klein */
+.punktKlein1 {
+	top: 35%;
+}
+.punktKlein2 {
+	top: 30%;
+	left: 20%;
+}
+.punktKlein3 {
+	top: 20%;
+	right: 15%;
+}
+.punktKlein4 {
+	bottom: 35%;
+	left: 20%;
+}
+.punktKlein5 {
+	bottom: 28%;
+	right: 35%;
+}
+.punktKlein6 {
+	bottom: 27%;
+	left: 43%;
+
+}
+/* Blätter */
+.blattOL {
+	top: 11%;
+	right: 20%;
+}
+.blattOR {
+	top: 28%;
+	left: 25%;
 }
 .startCarousel:hover {
 	rotate: 2deg;
