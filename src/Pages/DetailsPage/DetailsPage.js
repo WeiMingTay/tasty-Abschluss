@@ -1,27 +1,30 @@
-import Button from '../../Components/Button/Button';
 import NavBar from '../../Components/NavBar/NavBar';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import axios from 'axios';
 import './DetailsPage.css';
 
 const DetailsPage = () => {
     const [meal, setMeal] = useState();
     const [measures, setMeasures] = useState([]);
     const [ingredients, setIngredients] = useState([]);
-    const [showIngredients, setShowIngredients] = useState(true);
+    const [selected, setSelected] = useState(true);
+
     const ingredientsRef = useRef(null);
     const instructionsRef = useRef(null);
 
-    function handleToggle() {
-        setShowIngredients(!showIngredients);
-        ingredientsRef.current.style.display = showIngredients
-            ? 'none'
-            : 'block';
-        instructionsRef.current.style.display = showIngredients
-            ? 'block'
-            : 'none';
-    }
+    //Erstellen einer Funktion, die den Abschnitt "Ingredients"
+    //anzeigt und den Abschnitt "Instructions" ausblendet
+    const handelIngredientsBtn = () => {
+        setSelected(true);
+        ingredientsRef.current.style.display = 'block';
+        instructionsRef.current.style.display = 'none';
+    };
+    // Erstellen einer Funktion, die das Gegenteil der oben genannten Funktion macht
+    const handelInstructionsBtn = () => {
+        setSelected(false);
+        ingredientsRef.current.style.display = 'none';
+        instructionsRef.current.style.display = 'block';
+    };
 
     const params = useParams();
     // Speichern der meal-id, die vom Params Objekt erhaltet wird, in einer Variablen
@@ -58,7 +61,6 @@ const DetailsPage = () => {
                 const selectedMeal = data.meals[0];
                 filterMealObject(selectedMeal);
                 setMeal(selectedMeal);
-                console.log(measures, ingredients);
             });
     }, [mealId, measures, ingredients]);
 
@@ -73,9 +75,6 @@ const DetailsPage = () => {
     useEffect(() => {
         fetchMealById();
     }, [params.id]);
-
-    // const instructionsString = meal.strInstructions;
-    // const instructionsWithLines = instructionsString.replaceAll('.', '.\n');
 
     return (
         <>
@@ -104,14 +103,20 @@ const DetailsPage = () => {
                         {/* Hier könntest evtl mit RadioButtons arbeiten... Lassen sich einfacher togglen. quasi: if (checked) dann anzeigen sonst hide/none.. */}
                         <div className="ToggleButtons">
                             <button
-                                className="ingredientsBtn"
-                                onClick={handleToggle}
+                                // className="ingredientsBtn selected"
+                                className={`${
+                                    selected ? 'selected' : 'unselected'
+                                }`}
+                                onClick={handelIngredientsBtn}
                             >
                                 Ingredients
                             </button>
                             <button
-                                className="instructionsBtn"
-                                onClick={handleToggle}
+                                // className="instructionsBtn"
+                                className={`${
+                                    selected ? 'unselected' : 'selected'
+                                } instructionsBtn`}
+                                onClick={handelInstructionsBtn}
                             >
                                 Instructions
                             </button>
@@ -126,8 +131,8 @@ const DetailsPage = () => {
                                 {meal && (
                                     <>
                                         {measures.map((measure, index) => (
-                                            <p>
-                                                <span>{measure} </span>
+                                            <p key={index}>
+                                                <span>{measure}</span>
                                                 {ingredients[index]}
                                             </p>
                                         ))}

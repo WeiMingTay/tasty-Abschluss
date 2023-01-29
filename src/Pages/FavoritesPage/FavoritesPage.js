@@ -1,25 +1,28 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import NavBar from '../../Components/NavBar/NavBar';
 import WideCard from '../../Components/WideCard/WideCard';
 import './FavoritesPage.css';
 
 const FavoritesPage = () => {
-    const [list, setList] = useState();
+    const [list, setList] = useState([]);
+
+    // Erstellen eines leeren Arrays, um die  mealstobjekte
+    // aus dem localStorage darin zu verschieben
 
     //Erstellen einer Funktion, die die Liste der Lieblingsgerichte anzeigt
-    const showFavoritesList = () => {
-        // Erstellen eines leeren Arrays, um die  mealstobjekte
-        // aus dem localStorage darin zu verschieben
+    const showFavoritesList = useCallback(() => {
         const favoritesList = [];
-
         for (let i = 0; i < localStorage.length; i++) {
             let key = localStorage.key(i);
             let retrievedObject = JSON.parse(localStorage.getItem(key));
             favoritesList.push(retrievedObject);
         }
-
-        setList(favoritesList);
-    };
+        if (list.length === favoritesList.length) {
+            return;
+        } else {
+            setList(favoritesList);
+        }
+    }, []);
 
     useEffect(() => {
         //Die Funktion wird ausgeführt,
@@ -46,7 +49,9 @@ const FavoritesPage = () => {
                             }}
                         />
                     ))}
-                {!list && <h2>No favorites to display </h2>}
+                {list.length === 0 && (
+                    <h2 className="no-items">No favorites to display </h2>
+                )}
             </section>
             <NavBar />
         </>
