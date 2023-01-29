@@ -144,7 +144,7 @@
     display: none;
 }
 
-section.InstructionText {
+.InstructionText {
     width: 80vw;
     /* height: max-content; */
     display: flex;

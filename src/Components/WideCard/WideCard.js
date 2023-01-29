@@ -4,7 +4,13 @@ import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-const WideCard = ({ meal, button, removeFromFavorite }) => {
+const WideCard = ({ meal, button, onDelete }) => {
+    const removeFromFavorite = (key) => {
+        localStorage.removeItem(key);
+        if (onDelete) {
+            onDelete();
+        }
+    };
     return (
         <div className="wide-card">
             {button && (

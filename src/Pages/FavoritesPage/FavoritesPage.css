@@ -2,3 +2,8 @@
     padding: 2rem;
 }
 
+.no-items {
+    width: 90%;
+    margin: 10rem auto;
+    text-align: center;
+}

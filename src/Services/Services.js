@@ -22,22 +22,24 @@ export const fetchIngredients = async () => {
     return data.meals;
 };
 
-export const fetchSelectedCategory = async () => {
-    const { data } = await axios.get(
-        'www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
-    );
+// export const fetchSelectedCategory = async () => {
+//     const { data } = await axios.get(
+//         'www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+//     );
 
-    return data.meals;
-};
+//     return data.meals;
+// };
 
-export const fetchSelectedArea = async () => {
-    const { data } = await axios.get(
-        'www.themealdb.com/api/json/v1/1/filter.php?a=Canadian'
-    );
+// export const fetchSelectedArea = async () => {
+//     const { data } = await axios.get(
+//         'www.themealdb.com/api/json/v1/1/filter.php?a=Canadian'
+//     );
 
-    return data.meals;
-};
+//     return data.meals;
+// };
 
+// Diese Funktion sendet eine Anfrage und gibt ein Array von Objekten zurück
+// (jedes Objekt enthält nur den Namen der Essenskategorie)
 export const fetchMealSorts = async () => {
     const { data } = await axios.get(
         'https://www.themealdb.com/api/json/v1/1/list.php?c=list'

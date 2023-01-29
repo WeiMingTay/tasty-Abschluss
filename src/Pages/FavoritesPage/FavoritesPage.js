@@ -24,21 +24,6 @@ const FavoritesPage = () => {
         }
     }, []);
 
-    const removeFromFavorite = (key) => {
-        localStorage.removeItem(key);
-        const favoritesList = [];
-        for (let i = 0; i < localStorage.length; i++) {
-            let key = localStorage.key(i);
-            let retrievedObject = JSON.parse(localStorage.getItem(key));
-            favoritesList.push(retrievedObject);
-        }
-        if (list.length === favoritesList.length) {
-            return;
-        } else {
-            setList(favoritesList);
-        }
-    };
-
     useEffect(() => {
         //Die Funktion wird ausgeführt,
         // nachdem die detailsPage-Komponente montiert wurde
@@ -54,10 +39,19 @@ const FavoritesPage = () => {
                             key={index}
                             meal={meal}
                             button={true}
-                            removeFromFavorite={removeFromFavorite}
+                            onDelete={() => {
+                                setList(
+                                    list.filter(
+                                        (mealItem) =>
+                                            mealItem.idMeal !== meal.idMeal
+                                    )
+                                );
+                            }}
                         />
                     ))}
-                {!list && <h2>No favorites to display </h2>}
+                {list.length === 0 && (
+                    <h2 className="no-items">No favorites to display </h2>
+                )}
             </section>
             <NavBar />
         </>

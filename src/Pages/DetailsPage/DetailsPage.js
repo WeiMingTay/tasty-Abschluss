@@ -61,7 +61,6 @@ const DetailsPage = () => {
                 const selectedMeal = data.meals[0];
                 filterMealObject(selectedMeal);
                 setMeal(selectedMeal);
-                // console.log(measures, ingredients);
             });
     }, [mealId, measures, ingredients]);
 
@@ -133,7 +132,7 @@ const DetailsPage = () => {
                                     <>
                                         {measures.map((measure, index) => (
                                             <p key={index}>
-                                                <span>{measure} </span>
+                                                <span>{measure}</span>
                                                 {ingredients[index]}
                                             </p>
                                         ))}
