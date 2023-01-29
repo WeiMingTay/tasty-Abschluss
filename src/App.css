@@ -15,7 +15,12 @@ body {
 	background-color: #f1f5f5;
     min-height: 100vh;
 }
-
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+	width: 100%;
+}
 h1 {
 	font-size: var(--font-size-bg);
 	color: var(--text-color);
