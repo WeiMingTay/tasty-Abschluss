@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import NavBar from '../../Components/NavBar/NavBar';
 import WideCard from '../../Components/WideCard/WideCard';
 import './FavoritesPage.css';
@@ -25,14 +25,26 @@ const FavoritesPage = () => {
         //Die Funktion wird ausgeführt,
         // nachdem die detailsPage-Komponente montiert wurde
         showFavoritesList();
-    }, [<WideCard />]);
+    }, []);
     return (
         <>
             <section className="favorite-page">
                 <h3>Favoriten</h3>
                 {list &&
                     list.map((meal, index) => (
-                        <WideCard key={index} meal={meal} button={true} />
+                        <WideCard
+                            key={index}
+                            meal={meal}
+                            button={true}
+                            onDelete={() => {
+                                setList(
+                                    list.filter(
+                                        (mealItem) =>
+                                            mealItem.idMeal !== meal.idMeal
+                                    )
+                                );
+                            }}
+                        />
                     ))}
                 {!list && <h2>No favorites to display </h2>}
             </section>

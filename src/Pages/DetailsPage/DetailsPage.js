@@ -1,5 +1,3 @@
-
-
 import Button from '../../Components/Button/Button';
 import NavBar from '../../Components/NavBar/NavBar';
 import { useParams } from 'react-router-dom';
@@ -25,58 +23,59 @@ const DetailsPage = () => {
             : 'none';
     }
 
+    const params = useParams();
+    // Speichern der meal-id, die vom Params Objekt erhaltet wird, in einer Variablen
+    const mealId = params.id;
 
+    //Erstellen einer Funktion, die die keys speichert,
+    // die keine empty string oder Null werte in den oben genannten Arrays haben
+    const filterMealObject = (obj) => {
+        //Erstellen von zwei Arrays zum Speichern der measures  und ingredients keys,
+        // die von dem meal objekt erhalten werden
+        const measures = [];
+        const ingredients = [];
+        for (let key in obj) {
+            if (
+                key.startsWith('strIngredient') &&
+                obj[key] &&
+                obj[key] !== ' '
+            ) {
+                ingredients.push(obj[key]);
+            }
+            if (key.startsWith('strMeasure') && obj[key] && obj[key] !== ' ') {
+                measures.push(obj[key]);
+            }
+        }
+        setIngredients(ingredients);
+        setMeasures(measures);
+    };
 
+    const fetchMealById = useCallback(() => {
+        //Erstellen einer Funktion, die die meal daten gemäß der mealId  abruft
+        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+            .then((response) => response.json())
+            .then((data) => {
+                const selectedMeal = data.meals[0];
+                filterMealObject(selectedMeal);
+                setMeal(selectedMeal);
+                console.log(measures, ingredients);
+            });
+    }, [mealId, measures, ingredients]);
 
-	const params = useParams();
-	// Speichern der meal-id, die vom Params Objekt erhaltet wird, in einer Variablen
-	const mealId = params.id;
+    // Erstellen einer Funktion,dass das meal im localStorage  Speichert ,
+    // um es später in der Favoritenliste anzuzeigen
+    const addToFavorites = () => {
+        //Speichern des  meal objekts im localStorage durch Setzen
+        //das key auf den meal-id Wert
+        localStorage.setItem(`${meal.idMeal}`, JSON.stringify(meal));
+    };
 
-	//Erstellen einer Funktion, die die keys speichert,
-	// die keine empty string oder Null werte in den oben genannten Arrays haben
-	const filterMealObject = (obj) => {
-		//Erstellen von zwei Arrays zum Speichern der measures  und ingredients keys,
-		// die von dem meal objekt erhalten werden
-		const measures = [];
-		const ingredients = [];
-		for (let key in obj) {
-			if (key.startsWith("strIngredient") && obj[key] && obj[key] !== " ") {
-				ingredients.push(obj[key]);
-			}
-			if (key.startsWith("strMeasure") && obj[key] && obj[key] !== " ") {
-				measures.push(obj[key]);
-			}
-		}
-		setIngredients(ingredients);
-		setMeasures(measures);
-	};
+    useEffect(() => {
+        fetchMealById();
+    }, [params.id]);
 
-	const fetchMealById = useCallback(() => {
-		//Erstellen einer Funktion, die die meal daten gemäß der mealId  abruft
-		fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
-			.then((response) => response.json())
-			.then((data) => {
-				const selectedMeal = data.meals[0];
-				filterMealObject(selectedMeal);
-				setMeal(selectedMeal);
-				console.log(measures, ingredients);
-			});
-	}, [mealId, measures, ingredients]);
-
-	// Erstellen einer Funktion,dass das meal im localStorage  Speichert ,
-	// um es später in der Favoritenliste anzuzeigen
-	const addToFavorites = () => {
-		//Speichern des  meal objekts im localStorage durch Setzen
-		//das key auf den meal-id Wert
-		localStorage.setItem(`${meal.idMeal}`, JSON.stringify(meal));
-	};
-
-	useEffect(() => {
-		fetchMealById();
-	}, [params.id, fetchMealById]);
-
-	// const instructionsString = meal.strInstructions;
-	// const instructionsWithLines = instructionsString.replaceAll('.', '.\n'); 
+    // const instructionsString = meal.strInstructions;
+    // const instructionsWithLines = instructionsString.replaceAll('.', '.\n');
 
     return (
         <>
@@ -143,8 +142,20 @@ const DetailsPage = () => {
                         >
                             <h2>Instructions</h2>
                             <section className="Instructions">
-                                <article className='InstructionText'>{meal.strInstructions.replaceAll('.', '.\n')}</article>
-                                <a href={meal.strYoutube} target="_blank" rel="noreferrer" className="VideoButton">Video</a>
+                                <article className="InstructionText">
+                                    {meal.strInstructions.replaceAll(
+                                        '.',
+                                        '.\n'
+                                    )}
+                                </article>
+                                <a
+                                    href={meal.strYoutube}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="VideoButton"
+                                >
+                                    Video
+                                </a>
                             </section>
                         </section>
                     </section>

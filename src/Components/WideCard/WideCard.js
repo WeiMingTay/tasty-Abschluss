@@ -4,9 +4,12 @@ import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-const WideCard = ({ meal, button }) => {
+const WideCard = ({ meal, button, onDelete }) => {
     const removeFromFavorite = (key) => {
         localStorage.removeItem(key);
+        if (onDelete) {
+            onDelete();
+        }
     };
     return (
         <div className="wide-card">
@@ -17,7 +20,7 @@ const WideCard = ({ meal, button }) => {
                 />
             )}
             <div className="image-container1">
-                <img src={meal.strMealThumb} alt=""/>
+                <img src={meal.strMealThumb} alt="" />
             </div>
             <div className="meal-infos">
                 {/* hier wird der Titel nur aus 15 Buchstaben angezeigt,
