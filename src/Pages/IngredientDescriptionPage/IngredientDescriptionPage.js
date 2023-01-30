@@ -1,31 +1,62 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import './IngredientDescriptionPage.css';
+import { HiArrowNarrowLeft } from 'react-icons/hi';
 
 const IngredientDescriptionPage = () => {
     const [ingredient, setIngredient] = useState();
     const params = useParams();
-    console.log(params.id);
+    const navigate = useNavigate();
 
-    const getIngredientData = (ingredient) => {
+    const getIngredientData = (ingredientObj) => {
         fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
             .then((response) => response.json())
             .then((data) => {
                 const ingredientsList = data.meals;
-                console.log(ingredientsList);
                 const ingredientData = ingredientsList.find(
                     (ingredientItem) =>
-                        ingredientItem.strIngredient === ingredient
+                        ingredientItem.strIngredient.toLowerCase() ===
+                        ingredientObj.toLowerCase()
                 );
-                console.log(ingredientData);
+
                 setIngredient(ingredientData);
+                console.log(ingredient);
             });
     };
 
     useEffect(() => {
         getIngredientData(params.id);
-    }, []);
-    return <div>{ingredient && ingredient}</div>;
+        // eslint-disable-next-line
+    }, [params.id]);
+
+    return (
+        <>
+            {ingredient && (
+                <div className="in-container">
+                    <Link
+                        className="back-arrow-link"
+                        to="#"
+                        onClick={() => {
+                            navigate(-1);
+                        }}
+                    >
+                        <HiArrowNarrowLeft className="back_arrow" />
+                    </Link>
+                    <img
+                        src={`https://www.themealdb.com/images/ingredients/${params.id}.png`}
+                        alt={params.id}
+                    />
+                    {ingredient.strDescription ? (
+                        <div className="description-article">
+                            {ingredient.strDescription}
+                        </div>
+                    ) : (
+                        <h2 className="no-description">No Description</h2>
+                    )}
+                </div>
+            )}
+        </>
+    );
 };
 
 export default IngredientDescriptionPage;

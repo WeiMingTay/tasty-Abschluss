@@ -1,0 +1,25 @@
+.back_arrow2 {
+    margin: 2rem;
+}
+
+.in-container {
+    width: 100%;
+}
+
+.in-container img {
+    width: 100%;
+}
+
+.description-article {
+    padding: 3rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.no-description {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 3rem;
+}
