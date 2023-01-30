@@ -14,18 +14,19 @@
 
 .results-section {
     width: 100%;
-  /*   display: grid;
-    grid-template-columns: repeat(3, 1fr); */
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* display: flex;
+    flex-wrap: wrap; */
     gap: 1rem;
     padding-block: 2rem;
     margin-bottom: 10rem;
     transition: all 500ms;
 }
-/* @media (min-width: 700px) {
+@media (min-width: 700px) {
     .results-section {
         display: flex;
+        flex-wrap: wrap;
     }
-} */
+}
 

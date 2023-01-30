@@ -9,12 +9,16 @@
 	flex-direction: column;
 	justify-content: space-between;
 	overflow-x: hidden;
-
 }
 main h3 {
 	padding-block: 0.5rem;
+	text-align: start;
 }
 
+.areas-category {
+	display: flex;
+	flex-direction: column;
+}
 .title {
 	display: flex;
 	align-items: center;
@@ -38,4 +42,18 @@ main h3 {
 }
 .toStart:hover {
 	color: var(--text-color);
+}
+
+@media (min-width: 700px) {
+	.main-page .search-bar {
+		margin-top: 8rem;
+	}
+	.main-page main {
+		height: 100vh;
+	}
+	.areas-category {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
 }
