@@ -27,7 +27,7 @@
   outline: 3px solid var(--active2-color);
 }
 .mealOfDay h5 {
-  width: 40vw;
+  width: 60%;
   font-size: 2rem;
   color: var(--primary-color);
   margin-bottom: 0.5rem;

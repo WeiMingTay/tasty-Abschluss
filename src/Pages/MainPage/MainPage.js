@@ -8,9 +8,8 @@ import { fetchAreas, fetchCategories } from "../../Services/Services";
 import "./MainPage.css";
 import MealOfTheDay from "../../Components/MealOfTheDay/MealOfTheDay";
 
-import WideCard from '../../Components/WideCard/WideCard';
+import WideCard from "../../Components/WideCard/WideCard";
 import { Link } from "react-router-dom";
- 
 
 const Main = () => {
 	const [categories, setCategories] = useState();
@@ -18,8 +17,6 @@ const Main = () => {
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [searchResults, setSearchResults] = useState(null);
-
-
 
 	useEffect(() => {
 		async function fetchData() {
@@ -47,40 +44,47 @@ const Main = () => {
 
 	return (
 		<div className="main-page">
-			
 			<main>
-            <SearchBar setSearchResults={setSearchResults}/>
-			{searchResults && (
-                <section className="search-results">
-                    {/* Wenn der searchResults-Wert nicht null ist, werden die Karten 
+				<SearchBar setSearchResults={setSearchResults} />
+				{searchResults && (
+					<section className="search-results">
+						{/* Wenn der searchResults-Wert nicht null ist, werden die Karten 
             mit den Suchergebnissen gezeigt. */}
-                    {searchResults &&
-                        searchResults.map((meal) => (
-                            <WideCard key={meal.idMeal} meal={meal} />
-                        ))}
-                </section>
-            )}
-				 {!searchResults && <><section className="main-meal">
-					<h3>Meal of the Day</h3>
-					<MealOfTheDay />
-					{/*                     <img src={mainMeal} alt="main-meal" />
-					 */}
-				</section>
-				<section className="areas-section">
-					<div className="title">
-						<h3>Areas</h3>
-						<p className="seeAll">See All</p>
-					</div>
-					<Carousel data={areas} button={true} type1={true} />
-				</section>
-				<section className="areas-section">
-					<div className="title">
-						<h3>Categories</h3>
-						<p className="seeAll">See All</p>
-					</div>
-					<Carousel data={categories} card={true} />
-				</section> </>}
-				<Link className="toStart" to="/start">start</Link>
+						{searchResults &&
+							searchResults.map((meal) => (
+								<WideCard key={meal.idMeal} meal={meal} />
+							))}
+					</section>
+				)}
+				{!searchResults && (
+					<>
+						<section className="main-meal">
+							<h3>Meal of the Day</h3>
+							<MealOfTheDay />
+							{/*                     <img src={mainMeal} alt="main-meal" />
+							 */}
+						</section>
+						<div className="areas-category">
+							<section className="areas-section">
+								<div className="title">
+									<h3>Areas</h3>
+									<p className="seeAll">See All</p>
+								</div>
+								<Carousel data={areas} button={true} type1={true} />
+							</section>
+							<section className="areas-section">
+								<div className="title">
+									<h3>Categories</h3>
+									<p className="seeAll">See All</p>
+								</div>
+								<Carousel data={categories} card={true} />
+							</section>{" "}
+						</div>
+					</>
+				)}
+				<Link className="toStart" to="/start">
+					start
+				</Link>
 			</main>
 			<NavBar />
 		</div>

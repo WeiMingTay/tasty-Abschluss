@@ -25,29 +25,29 @@ h1 {
 	font-size: var(--font-size-bg);
 	color: var(--text-color);
 	padding: var(--padding-bg);
-	color: purple;
+	/* color: purple; */
 }
 h2 {
-	color: green;
+	/* color: green; */
 	font-size: 2.5rem;
 	margin-bottom: 1rem;
 	/* font-weight: 700; */
 }
 h3 {
 	font-size: 1.75rem;
-	color: red;
+	/* color: red; */
 }
 h4 {
-	color: blue;
+	/* color: blue; */
 	font-size: 1.5rem;
 }
 h5 {
     font-size: 2rem;
-	color: aqua;
+	/* color: aqua; */
 }
 h6 {
     font-size: 1.5rem;
-	color: tomato;
+	/* color: tomato; */
 }
 
 p {
