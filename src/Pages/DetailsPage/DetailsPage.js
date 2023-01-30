@@ -1,5 +1,5 @@
 import NavBar from '../../Components/NavBar/NavBar';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import './DetailsPage.css';
 
@@ -137,7 +137,14 @@ const DetailsPage = () => {
                                             >
                                                 <div className="ingredient-title">
                                                     <span>{measure}</span>
-                                                    <p>{ingredients[index]}</p>
+                                                    <Link
+                                                        className="ingredient-link"
+                                                        to={`/description/${ingredients[index]}`}
+                                                    >
+                                                        <p>
+                                                            {ingredients[index]}
+                                                        </p>
+                                                    </Link>
                                                 </div>
 
                                                 <img

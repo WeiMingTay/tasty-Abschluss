@@ -183,6 +183,10 @@
     padding: 0;
 }
 
+.ingredient-link {
+    all: unset;
+}
+
 /* --------------- INSTRUCTIONS SEITE --------------- */
 
 .Instructions {
