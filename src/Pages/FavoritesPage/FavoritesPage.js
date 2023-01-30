@@ -22,13 +22,13 @@ const FavoritesPage = () => {
         } else {
             setList(favoritesList);
         }
-    }, []);
+    }, [list.length]);
 
     useEffect(() => {
         //Die Funktion wird ausgeführt,
         // nachdem die detailsPage-Komponente montiert wurde
         showFavoritesList();
-    }, []);
+    }, [showFavoritesList]);
     return (
         <>
             <section className="favorite-page">

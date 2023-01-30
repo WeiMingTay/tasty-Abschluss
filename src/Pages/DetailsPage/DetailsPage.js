@@ -62,7 +62,7 @@ const DetailsPage = () => {
                 filterMealObject(selectedMeal);
                 setMeal(selectedMeal);
             });
-    }, [mealId, measures, ingredients]);
+    }, [mealId]);
 
     // Erstellen einer Funktion,dass das meal im localStorage  Speichert ,
     // um es später in der Favoritenliste anzuzeigen
@@ -74,7 +74,7 @@ const DetailsPage = () => {
 
     useEffect(() => {
         fetchMealById();
-    }, [params.id]);
+    }, [params.id, fetchMealById]);
 
     return (
         <>
