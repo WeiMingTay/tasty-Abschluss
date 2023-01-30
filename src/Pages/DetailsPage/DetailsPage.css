@@ -36,6 +36,7 @@
 
 .FoodType h4 {
     font-weight: 400;
+    padding-bottom: 2rem;
 }
 
 .favorite-btn {
@@ -46,6 +47,13 @@
     border: none;
     padding: 10px 15px;
     margin: 20px;
+    cursor: pointer;
+}
+
+.favorite-btn:active {
+    position: relative;
+    top: 1px;
+    color: orangered;
 }
 
 .heading-title {
@@ -119,19 +127,60 @@
     gap: 10px;
 }
 
-.Ingredients p {
+/* .Ingredients p {
     width: max-content;
     display: flex;
-    justify-content: flex-start;
-    /* vertikal zentriert */
-    align-items: center;
+    justify-content: flex-start; */
+/* vertikal zentriert */
+/* align-items: center;
     height: 52px;
     font-size: 18px;
     font-weight: 700;
     box-shadow: 0px 2px 16px rgba(6, 51, 54, 0.1); /* rgba find ich gut ;)  */
+/* border-radius: 16px;
+    background: var(--primary-color);
+    color: var(--text-color);
+} */
+
+.ingredientsPage {
+    margin-bottom: 10rem;
+}
+
+.ingredientsPage h2 {
+    margin-top: 2rem;
+}
+
+.ingredient-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 2px 16px rgba(6, 51, 54, 0.1); /* rgba find ich gut ;)  */
     border-radius: 16px;
     background: var(--primary-color);
     color: var(--text-color);
+    overflow: hidden;
+}
+
+.ingredient-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.ingredient-title span {
+    color: orangered;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.ingredient-title p {
+    margin-left: 1.5rem;
+    font-weight: bold;
+    padding: 0;
 }
 
 /* --------------- INSTRUCTIONS SEITE --------------- */
@@ -142,6 +191,10 @@
 
 .instructionsPage {
     display: none;
+}
+
+.instructionsPage h2 {
+    margin-top: 2rem;
 }
 
 .InstructionText {
@@ -156,7 +209,7 @@
     border-radius: 16px;
     background: var(--primary-color);
     font-size: 16px;
-    font-weight: 400;
+    font-weight: bold;
     white-space: pre-line;
 }
 

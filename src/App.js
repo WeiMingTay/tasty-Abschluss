@@ -9,6 +9,7 @@ import StartPage from './Pages/Startpage/Startpage';
 import MainPage from './Pages/MainPage/MainPage';
 import WelcomePage from './Pages/WelcomePage/WelcomePage';
 import CategoryPage from './Pages/CategoryPage/CategoryPage';
+import IngredientPage from './Pages/IngredientPage/IngredientPage';
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                         path="/category/:id"
                         element={<CategoryPage />}
                     ></Route>
+                    <Route path="/ingredient" element={<IngredientPage />} />
                     <Route path="/search" element={<SearchPage />} />
                     <Route path="/details/:id" element={<DetailsPage />} />
                     <Route path="/favoriten" element={<FavoritesPage />} />

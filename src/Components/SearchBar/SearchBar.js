@@ -1,21 +1,25 @@
 import React, { useRef } from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({ setSearchResults }) => {
+const SearchBar = ({
+    setSearchResults,
+    setIngredientSearchResults,
+    ingSearch,
+}) => {
     const timerRef = useRef(null);
     const inputRef = useRef();
 
     // Erstellen der Suchfunktion
     const searchMeal = (searchWord) => {
-        if (setSearchResults) {
-            // hier wird die alte setTimeout-Funktion aufgeräumt
+        // hier wird die alte setTimeout-Funktion aufgeräumt
 
-            clearTimeout(timerRef.current);
+        clearTimeout(timerRef.current);
 
-            // Eine setTimeout-Funktion wird hinzugefügt, um die Anfrage nach 1 Sekunde zu senden,
-            // um zu verhindern, dass bei jedem Tastendruck eine Anfrage gesendet wird
+        // Eine setTimeout-Funktion wird hinzugefügt, um die Anfrage nach 1 Sekunde zu senden,
+        // um zu verhindern, dass bei jedem Tastendruck eine Anfrage gesendet wird
 
-            timerRef.current = setTimeout(() => {
+        timerRef.current = setTimeout(() => {
+            if (!ingSearch) {
                 if (searchWord === '') {
                     setSearchResults(null);
                     return;
@@ -27,10 +31,24 @@ const SearchBar = ({ setSearchResults }) => {
                     .then((data) => {
                         const meals = data.meals;
                         setSearchResults(meals);
-                        console.log(meals);
                     });
-            }, 500);
-        }
+            }
+            if (ingSearch) {
+                if (searchWord === '') {
+                    setIngredientSearchResults(null);
+                    return;
+                }
+                fetch(
+                    `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchWord}`
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const meals = data.meals;
+                        console.log(data);
+                        setIngredientSearchResults(meals);
+                    });
+            }
+        }, 500);
     };
 
     return (

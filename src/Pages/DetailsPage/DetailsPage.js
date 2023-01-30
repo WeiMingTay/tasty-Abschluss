@@ -131,10 +131,20 @@ const DetailsPage = () => {
                                 {meal && (
                                     <>
                                         {measures.map((measure, index) => (
-                                            <p key={index}>
-                                                <span>{measure}</span>
-                                                {ingredients[index]}
-                                            </p>
+                                            <div
+                                                className="ingredient-container"
+                                                key={index}
+                                            >
+                                                <div className="ingredient-title">
+                                                    <span>{measure}</span>
+                                                    <p>{ingredients[index]}</p>
+                                                </div>
+
+                                                <img
+                                                    src={`https://www.themealdb.com/images/ingredients/${ingredients[index]}-Small.png`}
+                                                    alt={`${ingredients[index]}`}
+                                                />
+                                            </div>
                                         ))}
                                     </>
                                 )}
@@ -150,7 +160,7 @@ const DetailsPage = () => {
                                 <article className="InstructionText">
                                     {meal.strInstructions.replaceAll(
                                         '.',
-                                        '.\n'
+                                        '.\n\n'
                                     )}
                                 </article>
                                 <a
