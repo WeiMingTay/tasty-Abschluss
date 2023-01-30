@@ -1,20 +1,10 @@
-header {
-    display: flex;
-    padding: 1rem auto;
-}
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
 .back-arrow-link {
     all: unset;
 }
 
 .back_arrow {
     font-size: 3rem;
-    margin-right: 7rem;
+margin-right: 2rem;
 }
 .back_arrow:active {
     position: relative;
@@ -26,11 +16,11 @@ header {
     margin: 0 auto;
 }
 
-.results-section {
+/* .results-section {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding-block: 2rem;
     margin-bottom: 10rem;
-}
+} */

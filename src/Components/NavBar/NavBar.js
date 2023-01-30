@@ -8,6 +8,7 @@ const NavBar = () => {
 		<nav>
 			<Link to="/main">
 				{/* <i class="las la-home"></i> */}
+                <p>Start</p>
                 <svg
                 className="home-btn"
                 width="76"
@@ -34,6 +35,7 @@ const NavBar = () => {
 			</Link>
 			<Link to="/search">
 				{/* <i class="las la-search"></i> */}
+                <p>Suche</p>
                 <svg
                 className="discover-btn"
                 width="76"
@@ -61,6 +63,7 @@ const NavBar = () => {
             </svg>
 			</Link>
 			<Link to="/favoriten">
+                <p>Favoriten</p>
 				{/* <i class="lar la-heart"></i> */}
                 <svg
                 className="favorites-btn"
@@ -91,6 +94,7 @@ const NavBar = () => {
 			</Link>
 			<Link to="/profil">
 				{/* <i class="las la-user"></i> */}
+                <p>Profil</p>
                 <svg
                 className="profile-btn"
                 width="76"

@@ -15,12 +15,16 @@ nav {
 }
 nav svg {
 	margin: 0.5rem auto;
+	display:inline;
 }
 nav svg:is(:hover, :focus) {
 	fill: var(--active-color);
 }
 .favorites-btn:is(:hover, :focus) {
 	fill: red;
+}
+nav p {
+	display: none;
 }
 nav svg:hover path,
 nav svg:hover circle {
@@ -40,4 +44,20 @@ nav svg:first-of-type:hover .pathWhite {
 	border-radius: 2rem 2rem 0 0;
 
 	padding-block: 2rem;
+}
+
+@media (min-width: 700px) {
+		nav {
+			top: 0;
+			bottom: unset;
+			justify-content: flex-end;
+		}
+		nav svg {
+			display: none;
+
+		}
+		nav p {
+			display: inline-block;
+			padding: 2rem;
+		}
 }

@@ -17,16 +17,16 @@ const SearchPage = () => {
                     <Link className="back-arrow-link" to={'/main'}>
                         <HiArrowNarrowLeft className="back_arrow" />
                     </Link>
-                    <h1>Suchen</h1>
+                    <SearchBar
+                setSearchResults={setSearchResults}
+                searchResults={searchResults}
+            />
                 </div>
             </div>
             {/* Hier wird die setSearchResults-Funktion als Props 
             an die Suchleistenkomponente übergeben, sodass der State
              von der Suchleistenkomponente aktualisiert werden kann */}
-            <SearchBar
-                setSearchResults={setSearchResults}
-                searchResults={searchResults}
-            />
+         
             <section className="search-results">
                 {/* Wenn der searchResults-Wert nicht null ist, werden die Karten 
             mit den Suchergebnissen gezeigt. */}

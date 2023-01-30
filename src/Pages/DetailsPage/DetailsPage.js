@@ -97,8 +97,8 @@ const DetailsPage = () => {
                         </div>
 
                         <section className="FoodType">
-                            <h3>{meal.strCategory}</h3>
-                            <h4>{meal.strArea}</h4>
+                            <h5>{meal.strCategory}</h5>
+                            <h6>{meal.strArea}</h6>
                         </section>
                         {/* Hier könntest evtl mit RadioButtons arbeiten... Lassen sich einfacher togglen. quasi: if (checked) dann anzeigen sonst hide/none.. */}
                         <div className="ToggleButtons">

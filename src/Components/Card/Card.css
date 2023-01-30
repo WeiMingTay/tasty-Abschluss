@@ -8,7 +8,7 @@
 } */
 
 .card {
-	box-shadow: 0 0 10px 0px lightgray;
+	
 	aspect-ratio: 1 / .9;
 	padding: 1rem;
 	cursor: pointer;
@@ -21,7 +21,8 @@
 	max-width: 150px;
 }
 .card:hover {
-	box-shadow: 0 0 0 0 lightgray;
+	
+	box-shadow: 0 0 10px 0px lightgray;
 }
 
 .card img {

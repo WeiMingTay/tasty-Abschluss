@@ -6,6 +6,7 @@
 :root {
 	--primary-color: #ffffff;
 	--secondary-color: #fbfbfb;
+	--bg-color: #f1f5f5;
 	--active-color: #70b9be;
 	--active2-color: #3da0a7;
 	--inactive-color: #97a2b0;
@@ -16,6 +17,8 @@
 	--padding-sm: 1rem;
 	--margin-bg: 2rem;
 	--margin-sm: 1rem;
+
+	--borderRadius: 2rem;
 
 	--fontFamilyMontserrat: "Montserrat", sans-serif;
 	--fontFamilySofia: "Sofia Sans Semi Condensed", sans-serif;

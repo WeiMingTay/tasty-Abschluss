@@ -1,8 +1,9 @@
-import React from 'react';
-import './WideCard.css';
-import { BsFillArrowRightSquareFill } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
-import { AiFillCloseCircle } from 'react-icons/ai';
+import React from "react";
+import "./WideCard.css";
+/* import { BsFillArrowRightSquareFill } from "react-icons/bs"; */
+import { Link } from "react-router-dom";
+import { AiFillCloseCircle } from "react-icons/ai";
+import Flag from "react-world-flags";
 
 const WideCard = ({ meal, button, onDelete }) => {
     const removeFromFavorite = (key) => {
@@ -24,19 +25,25 @@ const WideCard = ({ meal, button, onDelete }) => {
             </div>
             <div className="meal-infos">
                 {/* hier wird der Titel nur aus 15 Buchstaben angezeigt,
+
                  um ein overflow zu vermeiden  */}
-                <h4>{meal.strMeal.substring(0, 15) + '...'}</h4>
-                <div className="category-name">
-                    <div className="blue-point"></div>
-                    <span>{meal.strCategory}</span>
-                </div>
-            </div>
-            {/* Der Link führt zur DetailsPage gemäß der jeweiligen Gericht-ID */}
-            <Link className="details-arrow-link" to={`/details/${meal.idMeal}`}>
-                <BsFillArrowRightSquareFill className="details-arrow" />
-            </Link>
-        </div>
-    );
+					<h4>{mealString}</h4>
+					<div className="category-name">
+						{/* <div className="blue-point"></div> */}
+{/* Hiermit könnte man evtl was machen, muss noch n weg finden, wie man die AREA zu einem country code macht =) */}
+{/* Zur not macht man ein array mit den informationen selbst */}
+						<Flag code="my" />
+
+						<span>{meal.strArea}</span>
+						
+					</div>
+				</div>
+				{/* Der Link führt zur DetailsPage gemäß der jeweiligen Gericht-ID */}
+
+				{/* <BsFillArrowRightSquareFill className="details-arrow" /> */}
+			</div>
+		</Link>
+	);
 };
 
 export default WideCard;

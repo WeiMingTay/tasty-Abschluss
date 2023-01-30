@@ -1,48 +1,57 @@
-@import url('variables.css');
+@import url("variables.css");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 html {
-    font-family: var(--fontFamilyMontserrat);
+	font-family: var(--fontFamilyMontserrat);
 }
 body {
-    height: 100vh;
-    width: 100vw;
-}
+	height: 100vh;
+	width: 100vw;
 
-.App {
+	background-color: #f1f5f5;
     min-height: 100vh;
-    background-color: #f1f5f5;
 }
-
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+	width: 100%;
+}
 h1 {
-    font-size: var(--font-size-bg);
-    color: var(--text-color);
-    padding: var(--padding-bg);
-    color: purple;
+	font-size: var(--font-size-bg);
+	color: var(--text-color);
+	padding: var(--padding-bg);
+	/* color: purple; */
 }
 h2 {
-    /* color: green; */
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    /* font-weight: 700; */
+	/* color: green; */
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	/* font-weight: 700; */
 }
 h3 {
-    font-size: 1.75rem;
-    /* color: red; */
+	font-size: 1.75rem;
+	/* color: red; */
 }
 h4 {
-    /* color: blue; */
-    font-size: 1.5rem;
+	/* color: blue; */
+	font-size: 1.5rem;
 }
-h5 {color: aqua;}
-h6 {color: tomato;}
+h5 {
+    font-size: 2rem;
+	/* color: aqua; */
+}
+h6 {
+    font-size: 1.5rem;
+	/* color: tomato; */
+}
 
 p {
-    font-size: var(--font-size-sm);
-    color: var(--text-color);
-    padding: var(--padding-bg);
+	font-size: var(--font-size-sm);
+	color: var(--text-color);
+	padding: var(--padding-bg);
 }
