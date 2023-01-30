@@ -16,9 +16,10 @@
 
 .remove-btn {
 	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	font-size: 1.8rem;
+	top: -.5rem;
+	right: -.5rem;
+	font-size: 2.5rem;
+	cursor: pointer;
 }
 
 .image-container1 {
