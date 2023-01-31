@@ -11,6 +11,40 @@ const WideCard = ({ meal, button, onDelete }) => {
             onDelete();
         }
     };
+
+    const colorClass = (category) => {
+        switch (category) {
+            case 'Beef':
+                return 'beef-color';
+            case 'Breakfast':
+                return 'breakfast-color';
+            case 'Chicken':
+                return 'chicken-color';
+            case 'Goat':
+                return 'goat-color';
+            case 'Lamb':
+                return 'lamb-color';
+            case 'Miscellaneous':
+                return 'miscellaneous-color';
+            case 'Pasta':
+                return 'pasta-color';
+            case 'Pork':
+                return 'pork-color';
+            case 'Seafood':
+                return 'seafood-color';
+            case 'Side':
+                return 'side-color';
+            case 'Starter':
+                return 'starter-color';
+            case 'Vegan':
+                return 'vegan-color';
+            case 'Vegetarian':
+                return 'vegetarian-color';
+            // Add cases for other categories with different colors
+            default:
+                return 'default-color';
+        }
+    };
     return (
         <div className="wide-card">
             {button && (
@@ -27,7 +61,9 @@ const WideCard = ({ meal, button, onDelete }) => {
                  um ein overflow zu vermeiden  */}
                 <h4>{meal.strMeal.substring(0, 15) + '...'}</h4>
                 <div className="category-name">
-                    <div className="blue-point"></div>
+                    <div
+                        className={`point ${colorClass(meal.strCategory)}`}
+                    ></div>
                     <span>{meal.strCategory}</span>
                 </div>
             </div>
