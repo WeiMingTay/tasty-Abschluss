@@ -33,15 +33,16 @@
 }
 
 .category-name {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
-.category-name span {
-    /* color: var(--inactive); */
-}
+/* .category-name span {
+    color: var(--inactive);
+} */
 
 .meal-infos {
     width: 50%;
@@ -56,7 +57,12 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color: var(--active-color);
+    /* background-color: var(--active-color); */
+}
+
+.category-name-span {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .details-arrow {
@@ -128,4 +134,17 @@
 
 .default-color {
     background-color: #e2fa04;
+}
+
+.country-flag-container {
+    margin-left: auto;
+    margin-right: 2rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+.country-flag-container .flag {
+    width: 100%;
+    width: 3rem;
+    height: 3rem;
 }

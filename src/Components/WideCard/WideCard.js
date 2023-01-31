@@ -3,6 +3,7 @@ import './WideCard.css';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { flags } from '../../Services/Services';
 
 const WideCard = ({ meal, button, onDelete }) => {
     const removeFromFavorite = (key) => {
@@ -11,6 +12,15 @@ const WideCard = ({ meal, button, onDelete }) => {
             onDelete();
         }
     };
+
+    function displayFlag(meal) {
+        if (!meal) return;
+
+        const flagObj = flags.find(
+            (f) => f.country.toLowerCase() === meal.strArea.toLowerCase()
+        );
+        return flagObj.flag;
+    }
 
     const colorClass = (category) => {
         switch (category) {
@@ -40,7 +50,6 @@ const WideCard = ({ meal, button, onDelete }) => {
                 return 'vegan-color';
             case 'Vegetarian':
                 return 'vegetarian-color';
-            // Add cases for other categories with different colors
             default:
                 return 'default-color';
         }
@@ -64,7 +73,16 @@ const WideCard = ({ meal, button, onDelete }) => {
                     <div
                         className={`point ${colorClass(meal.strCategory)}`}
                     ></div>
-                    <span>{meal.strCategory}</span>
+                    <span className="category-name-span">
+                        {meal.strCategory}
+                    </span>
+                    <div className="country-flag-container">
+                        <img
+                            className="flag"
+                            src={displayFlag(meal)}
+                            alt={meal.strArea}
+                        />
+                    </div>
                 </div>
             </div>
             {/* Der Link führt zur DetailsPage gemäß der jeweiligen Gericht-ID */}

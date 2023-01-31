@@ -19,7 +19,6 @@ const MealOfTheDay = () => {
                 setRandomMeal(data.meals[0]);
             });
     }, [url]);
-    console.log(randomMeal);
 
     return (
         <Link className="mealOfDayLink" to={`/details/${randomMeal.idMeal}`}>

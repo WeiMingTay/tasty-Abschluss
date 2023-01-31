@@ -44,7 +44,6 @@ const SearchBar = ({
                     .then((response) => response.json())
                     .then((data) => {
                         const meals = data.meals;
-                        console.log(data);
                         setIngredientSearchResults(meals);
                     });
             }

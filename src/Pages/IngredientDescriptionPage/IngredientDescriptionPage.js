@@ -21,7 +21,6 @@ const IngredientDescriptionPage = () => {
                 );
 
                 setIngredient(ingredientData);
-                console.log(ingredient);
             });
     };
 

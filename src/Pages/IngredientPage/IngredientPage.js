@@ -4,6 +4,7 @@ import SmallCard from '../../Components/SmallCard/SmallCard';
 import './IngredientPage.css';
 import { Link } from 'react-router-dom';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
+import NavBar from '../../Components/NavBar/NavBar';
 
 const IngredientPage = () => {
     const [IngredientSearchResults, setIngredientSearchResults] =
@@ -25,6 +26,7 @@ const IngredientPage = () => {
                     <SmallCard meal={meal} key={index} />
                 ))}
             </div>
+            <NavBar />
         </div>
     );
 };

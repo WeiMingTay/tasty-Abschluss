@@ -218,7 +218,9 @@
 }
 
 .VideoButton {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80vw;
     height: 54px;
     padding: 16px 146px;
@@ -231,6 +233,13 @@
     color: var(--primary-color);
     text-decoration: none;
 }
+
+.VideoButton:active {
+    position: relative;
+    top: 1px;
+    color: orangered;
+}
+
 /* .favorite-btn {
 	position: absolute;
 	right: 1rem;
