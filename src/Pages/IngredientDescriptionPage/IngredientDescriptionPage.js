@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import './IngredientDescriptionPage.css';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
+import NavBar from '../../Components/NavBar/NavBar';
 
 const IngredientDescriptionPage = () => {
     const [ingredient, setIngredient] = useState();
@@ -34,7 +35,7 @@ const IngredientDescriptionPage = () => {
             {ingredient && (
                 <div className="in-container">
                     <Link
-                        className="back-arrow-link"
+                        className="back-arrow-link2"
                         to="#"
                         onClick={() => {
                             navigate(-1);
@@ -53,6 +54,7 @@ const IngredientDescriptionPage = () => {
                     ) : (
                         <h2 className="no-description">No Description</h2>
                     )}
+                    <NavBar />
                 </div>
             )}
         </>
