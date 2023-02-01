@@ -19,6 +19,7 @@ const WideCard = ({ meal, button, onDelete }) => {
         const flagObj = flags.find(
             (f) => f.country.toLowerCase() === meal.strArea.toLowerCase()
         );
+        console.log(flagObj);
         return flagObj.flag;
     }
 

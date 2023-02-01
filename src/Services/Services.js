@@ -152,4 +152,8 @@ export const flags = [
         country: 'Unknown',
         flag: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Missing_flag.png',
     },
+    {
+        country: 'Vietnamese',
+        flag: 'https://flagpedia.net/data/flags/normal/vn.png',
+    },
 ];
