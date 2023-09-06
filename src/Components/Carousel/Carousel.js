@@ -19,7 +19,7 @@ const Carousel = ({
 
     // Hier wird ein neues Array erstellt, das aus zwei Elementen besteht,
     // die im Karussell angezeigt werden
-    const visibleCards = data?.slice(currentCardIndex, currentCardIndex + 2);
+    const visibleCards = data?.slice(currentCardIndex, currentCardIndex + 3);
     // Hier wird ein neues Array aus 3 Elemente erstellt (für areas buttons)
     const visibleButtons = data?.slice(
         currentButtonIndex,

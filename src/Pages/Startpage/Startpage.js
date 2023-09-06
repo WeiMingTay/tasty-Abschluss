@@ -825,7 +825,7 @@ const StartPage = () => {
 
 			{/*  <img src={logo} alt="logo" /> */}
 			<div className="start-info">
-				<h2>All recipe you needed</h2>
+				<h2>All recipes you needed</h2>
 				<p>5000+ healthy recipes made by People for your healthy life</p>
 				<Link to="/main">
 					<button className="start-btn">Get Started</button>
